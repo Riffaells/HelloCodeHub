@@ -1,0 +1,45 @@
+[
+    {
+      "logo": "kotlin",
+      "name": "Kotlin",
+      "description": "Kotlin — это современный статически типизированный язык программирования, разработанный JetBrains и полностью совместимый с Java.",
+      "code": "fun main() {\n    println(\"Hello, World!\")\n}",
+      "developmentStartYear": "2011",
+      "firstVersionYear": "2016",
+      "creators": ["JetBrains"],
+      "paradigms": ["Объектно-ориентированный", "Функциональный", "Императивный"],
+      "typing": "Статическая, Сильная",
+      "useCases": ["Мобильная разработка", "Серверная разработка", "Веб-разработка"],
+      "compatibility": ["JVM", "Android", "JavaScript", "Native"],
+      "popularFrameworks": ["Ktor", "kotlinx.coroutines", "Spring"],
+      "features": ["Безопасность null-значений", "Корутины", "Совместимость с Java"],
+      "prosAndCons": {
+        "pros": ["Совместимость с Java", "Лаконичный синтаксис", "Поддержка сообщества"],
+        "cons": ["Медленная компиляция на крупных проектах", "Ограниченная совместимость с некоторыми старыми библиотеками Java"]
+      },
+      "relatedLanguages": ["java", "scala", "groovy"],
+      "ideSupport": ["IntelliJ IDEA", "Android Studio", "Eclipse"]
+    },
+    {
+      "logo": "python",
+      "name": "Python",
+      "description": "Python — это язык программирования высокого уровня, известный своей простотой и удобочитаемостью, широко используемый в веб-разработке и науке о данных.",
+      "code": "print(\"Hello, World!\")",
+      "developmentStartYear": "1989",
+      "firstVersionYear": "1991",
+      "creators": ["Guido van Rossum"],
+      "paradigms": ["Объектно-ориентированное", "Императивное", "Функциональное", "Процедурное"],
+      "typing": "Динамическая, Сильная",
+      "useCases": ["Веб-разработка", "Наука о данных", "Машинное обучение", "Автоматизация"],
+      "compatibility": ["Windows", "Linux", "macOS", "Web (через компиляцию в JavaScript)"],
+      "popularFrameworks": ["Django", "Flask", "NumPy", "Pandas", "TensorFlow"],
+      "features": ["Читаемый и лаконичный синтаксис", "Большая стандартная библиотека", "Поддержка множества парадигм"],
+      "prosAndCons": {
+        "pros": ["Простой синтаксис", "Огромное количество библиотек", "Поддержка большого сообщества"],
+        "cons": ["Низкая производительность для задач, требующих высокой вычислительной мощности", "Медленная скорость выполнения по сравнению с компилируемыми языками"]
+      },
+      "relatedLanguages": ["ruby", "perl", "javascript"],
+      "ideSupport": ["PyCharm", "VSCode", "Sublime Text", "Jupyter Notebook"]
+    }
+
+]
