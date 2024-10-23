@@ -5,12 +5,13 @@ import com.arkivanov.decompose.DefaultComponentContext
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.lifecycle.LifecycleController
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
+import com.arkivanov.mvikotlin.core.utils.setMainThreadId
 import com.riffaells.hellocodehub.domain.components.root.DefaultRootComponent
 import com.riffaells.hellocodehub.di.kodein
 import com.riffaells.hellocodehub.presentation.ui.DesktopContent
 import com.riffaells.hellocodehub.presentation.ui.root.RootContent
-import hello_code_hub.composeapp.generated.resources.Res
-import hello_code_hub.composeapp.generated.resources.app
+import hellocodehub.composeapp.generated.resources.Res
+import hellocodehub.composeapp.generated.resources.app
 import org.jetbrains.compose.resources.stringResource
 import org.kodein.di.compose.localDI
 import org.kodein.di.compose.withDI
@@ -19,6 +20,11 @@ import javax.swing.SwingUtilities
 @OptIn(ExperimentalDecomposeApi::class, ExperimentalComposeUiApi::class)
 fun main() {
     val lifecycle = LifecycleRegistry()
+
+    SwingUtilities.invokeAndWait {
+        setMainThreadId(Thread.currentThread().id)
+
+    }
     application {
         withDI(
             kodein

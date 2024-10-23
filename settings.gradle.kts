@@ -1,4 +1,4 @@
-rootProject.name = "Hello-Code-Hub"
+rootProject.name = "HelloCodeHub"
 
 pluginManagement {
     repositories {

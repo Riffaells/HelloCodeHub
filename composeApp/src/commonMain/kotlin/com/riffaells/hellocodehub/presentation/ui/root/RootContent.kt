@@ -6,7 +6,7 @@ import com.riffaells.hellocodehub.domain.components.root.DefaultRootComponent
 import com.riffaells.hellocodehub.domain.components.root.RootStore
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
 import com.riffaells.hellocodehub.presentation.theme.AppTheme
-import hello_code_hub.composeapp.generated.resources.Res
+import hellocodehub.composeapp.generated.resources.Res
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString

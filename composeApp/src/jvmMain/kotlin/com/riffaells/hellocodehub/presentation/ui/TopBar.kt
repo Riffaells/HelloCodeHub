@@ -13,8 +13,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowScope
 import com.riffaells.hellocodehub.presentation.theme.RIcons
 import com.riffaells.hellocodehub.presentation.ui.ButtonToolBar
-import hello_code_hub.composeapp.generated.resources.Res
-import hello_code_hub.composeapp.generated.resources.app
+import hellocodehub.composeapp.generated.resources.Res
+import hellocodehub.composeapp.generated.resources.app
 import org.jetbrains.compose.resources.stringResource
 
 @Composable

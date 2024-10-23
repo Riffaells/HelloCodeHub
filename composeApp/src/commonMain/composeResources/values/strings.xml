@@ -1,4 +1,31 @@
 <resources>
     <string name="app">Hello Code Hub</string>
 
+
+    <string-array name="detailed_tabs">
+        <item>Description</item>
+        <item>Features</item>
+        <item>Pros &amp; Cons</item>
+    </string-array>
+
+    <!-- Paradigms -->
+    <string name="paradigm_assembly">Assembly</string>
+    <string name="paradigm_block">Block-Structured</string>
+    <string name="paradigm_cross_platform">Cross-Platform</string>
+    <string name="paradigm_data_oriented">Data-Oriented</string>
+    <string name="paradigm_declarative">Declarative</string>
+    <string name="paradigm_functional">Functional</string>
+    <string name="paradigm_generic">Generic</string>
+    <string name="paradigm_high_level">High-Level</string>
+    <string name="paradigm_imperative">Imperative</string>
+    <string name="paradigm_logic">Logic</string>
+    <string name="paradigm_low_level">Low-Level</string>
+    <string name="paradigm_markup">Markup</string>
+    <string name="paradigm_multi">Multi-paradigm</string>
+    <string name="paradigm_object_oriented">Object-Oriented</string>
+    <string name="paradigm_parallel">Parallel</string>
+    <string name="paradigm_procedural">Procedural</string>
+    <string name="paradigm_reflective">Reflective</string>
+    <string name="paradigm_scripting">Scripting</string>
+
 </resources>
