@@ -20,6 +20,7 @@ kodein = "7.22.0"
 decompose = "3.2.0-beta03"
 essenty = "2.2.0-beta01"
 mvi = "4.2.0"
+materialKolor = "2.0.0"
 
 [libraries]
 
@@ -50,7 +51,7 @@ multiplatformSettings = { module = "com.russhwolf:multiplatform-settings", versi
 multiplatformSettings-coroutines = { module = "com.russhwolf:multiplatform-settings-coroutines", version.ref = "multiplatformSettings" }
 multiplatformSettings-serialization = { module = "com.russhwolf:multiplatform-settings-serialization", version.ref = "multiplatformSettings" }
 
-
+materialKolor = { module = "com.materialkolor:material-kolor", version.ref = "materialKolor" }
 
 [plugins]
 

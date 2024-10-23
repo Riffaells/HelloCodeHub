@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
 import org.jetbrains.compose.resources.painterResource
@@ -29,36 +30,42 @@ fun LangCard(
                 onClick()
             }
     ) {
-        Box(
-            modifier = Modifier.padding(8.dp)
+
+
+        Row(
+            modifier = Modifier
+                .padding(4.dp),
+            verticalAlignment = Alignment.CenterVertically,
         ) {
+            Image(
+                modifier = Modifier
+                    .sizeIn(maxHeight = 70.dp)
+                    .padding(4.dp),
+                painter = painterResource(lang.getLogo()),
+                contentDescription = null,
+                alignment = Alignment.CenterStart
+            )
+            Column {
+                Text(
 
-
-            Row(modifier = Modifier) {
-                Image(
-                    modifier = Modifier
-                        .sizeIn(maxHeight = 70.dp)
-                            ,
-                    painter = painterResource(lang.getLogo()),
-                    contentDescription = null,
-                    alignment = Alignment.CenterStart
+                    modifier = Modifier.padding(end=4.dp),
+                    text = lang.name,
+                    style = MaterialTheme.typography.headlineMedium,
                 )
-                Column {
-                    Text(
-
-                        lang.name,
-                        style = MaterialTheme.typography.headlineMedium,
-                    )
 
 
-                    Text(
+                Text(
+                    modifier = Modifier.padding(end=4.dp),
+                    text = lang.description,
+                    style = MaterialTheme.typography.titleSmall,
+                    maxLines = 3,
+                    overflow = TextOverflow.Ellipsis
 
-                        lang.description,
-                        style = MaterialTheme.typography.titleSmall,
-                    )
 
-                }
+                )
+
             }
         }
+
     }
 }
