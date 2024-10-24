@@ -1,6 +1,7 @@
 package com.riffaells.hellocodehub.presentation.ui.detailed.components
 
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
@@ -20,11 +21,11 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.riffaells.hellocodehub.domain.model.CodeColor
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
-import hellocodehub.composeapp.generated.resources.JetBrainsMono
-import hellocodehub.composeapp.generated.resources.JetBrainsMono_Italic
-import hellocodehub.composeapp.generated.resources.Res
+import com.riffaells.hellocodehub.presentation.ui.component.TitleText
+import hellocodehub.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.resources.FontResource
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun TabContentDescription(lang: ProgrammingLanguage) {
@@ -35,7 +36,53 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
         )
 
 
-    HighlightedCode(text = lang.code)
+    TitleText(
+        title = "${stringResource(Res.string.hello_world)} ${lang.name}",
+
+        ) {
+        Column(
+            modifier = Modifier.padding(4.dp)
+        ) {
+            TitleText(
+                title = stringResource(Res.string.name_origin),
+                style = MaterialTheme.typography.headlineSmall,
+
+            ) {
+                Text(
+                    text = lang.history.nameOrigin
+                )
+            }
+
+            TitleText(
+                title = stringResource(Res.string.development_start),
+                style = MaterialTheme.typography.headlineSmall,
+            ) {
+                Text(
+                    text = lang.history.developmentStart
+                )
+            }
+
+            TitleText(
+                title = stringResource(Res.string.first_release),
+                style = MaterialTheme.typography.headlineSmall,
+            ) {
+                Text(
+                    text = lang.history.firstRelease
+                )
+            }
+        }
+    }
+
+
+
+    TitleText(
+        title = "${stringResource(Res.string.hello_world)} ${lang.name}",
+
+        ) {
+
+        HighlightedCode(text = lang.code)
+    }
+
 
 }
 
@@ -117,7 +164,7 @@ fun HighlightedCode(
 
 
     Card(
-        modifier = Modifier,
+        modifier = modifier,
         colors = CardDefaults.cardColors(
             containerColor = codeColor.background,
         )

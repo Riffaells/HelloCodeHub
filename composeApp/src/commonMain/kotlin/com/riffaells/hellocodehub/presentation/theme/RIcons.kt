@@ -20,6 +20,10 @@ object RIcons {
     val Check = Icons.Rounded.Check
     val Close = Icons.Rounded.Close
 
+
+    val Visibility = Icons.Rounded.Visibility
+    val VisibilityOff = Icons.Rounded.VisibilityOff
+
     val Bolt = Icons.Rounded.Bolt
     val Crown = Icons.Rounded.Diamond
     val ArrowBack = Icons.AutoMirrored.Rounded.ArrowBack

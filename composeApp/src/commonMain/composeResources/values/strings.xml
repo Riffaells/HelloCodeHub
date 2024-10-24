@@ -11,6 +11,10 @@
     <!-- Paradigms -->
 
     <string name="paradigms">Paradigms:</string>
+    <string name="name_origin">Name Origin</string>
+    <string name="development_start">Development Start</string>
+    <string name="first_release">First Release</string>
+    <string name="hello_world">Приветствие в мире</string>
 
     <string name="paradigm_assembly">Assembly</string>
     <string name="paradigm_block">Block-Structured</string>
