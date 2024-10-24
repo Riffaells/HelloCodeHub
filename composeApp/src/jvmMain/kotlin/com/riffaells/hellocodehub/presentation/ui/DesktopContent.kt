@@ -4,9 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowScope
 import com.riffaells.hellocodehub.App
 import com.riffaells.hellocodehub.domain.components.root.RootComponent
@@ -24,23 +26,25 @@ fun WindowScope.DesktopContent(
         modifier = modifier.fillMaxSize(),
     ) {
 
-        Column(
-            modifier = Modifier.background(Color.Transparent),
-        ) {
-            TopBar(
-                modifier = Modifier,
-                onCloseRequest = onCloseRequest,
-                onMinimizeRequest = onMinimizeRequest,
-                onMaximizeRequest = onMaximizeRequest,
-            )
-            App(
-                component = component,
-            )
-        }
+//        Column(
+//            modifier = Modifier.background(Color.Transparent),
+//        ) {
+
+        App(
+            modifier = Modifier,
+            component = component,
+        )
+        TopBar(
+            modifier = Modifier,
+            onCloseRequest = onCloseRequest,
+            onMinimizeRequest = onMinimizeRequest,
+            onMaximizeRequest = onMaximizeRequest,
+        )
+    }
 //        SpaceContent(
 //            modifier = modifier.fillMaxSize(),
 //            isSpace
 //        )
-    }
+//    }
 }
 

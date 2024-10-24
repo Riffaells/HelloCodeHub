@@ -4,7 +4,6 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.kotlin
-import hellocodehub.composeapp.generated.resources.python
 import kotlinx.serialization.Serializable
 
 @Immutable
@@ -12,7 +11,6 @@ import kotlinx.serialization.Serializable
 data class ProgrammingLanguage(
     val logo: String,
     val name: String,
-    val typeLang: Int,
     val description: String,
     val history: History,
     val code: String,
@@ -40,8 +38,8 @@ data class ProgrammingLanguage(
 
     fun getLogo() = when (logo) {
         "kotlin" -> Res.drawable.kotlin
-        "python" -> Res.drawable.python
-        else -> Res.drawable.python
+        "python" -> Res.drawable.kotlin
+        else -> Res.drawable.kotlin
     }
 
     fun getColors() = when (logo) {

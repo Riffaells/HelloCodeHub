@@ -22,13 +22,16 @@ fun WindowScope.TopBar(
     modifier: Modifier = Modifier,
     onCloseRequest: () -> Unit,
     onMinimizeRequest: () -> Unit,
-    onMaximizeRequest: () -> Unit
+    onMaximizeRequest: () -> Unit,
+    height: Int = 36
 
 ) = WindowDraggableArea(
-    modifier = modifier.height(36.dp),
+    modifier = modifier.height(height.dp),
 ) {
     Surface(
         modifier = modifier.fillMaxSize(),
+        contentColor = Color.Transparent,
+        color = Color.Transparent,
     ) {
 
 

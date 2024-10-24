@@ -28,13 +28,18 @@ fun DetailedLogo(
 
     Box {
         IconButton(
-            modifier = Modifier.padding(4.dp),
+            modifier = Modifier
+                .padding(start=4.dp),
             onClick = { onBack() },
             colors = IconButtonDefaults.iconButtonColors(
 
             )
         ) {
-            Image(RIcons.ArrowBack, contentDescription = null, colorFilter =  ColorFilter.tint(MaterialTheme.colorScheme.primary))
+            Image(
+                RIcons.ArrowBack,
+                contentDescription = null,
+                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
+            )
         }
 
         Column(
@@ -48,9 +53,11 @@ fun DetailedLogo(
         ) {
 
 
+
+
             Image(
                 modifier = Modifier
-                    .sizeIn(minWidth = 48.dp, minHeight = 48.dp),
+                    .sizeIn(maxHeight = 120.dp, minHeight = 120.dp),
                 painter = painterResource(lang.getLogo()),
                 contentDescription = lang.name
             )

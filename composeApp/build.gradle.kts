@@ -72,7 +72,6 @@ kotlin {
 
             implementation(libs.kodein)
             implementation(libs.kodein.compose)
-            implementation(libs.materialKolor)
 
         }
 

@@ -170,6 +170,17 @@ fun styleText(
                     }
                 }
 
+                "italic" -> {
+                    withStyle(
+                        style = SpanStyle(
+
+                            fontStyle = FontStyle.Italic
+                        )
+                    ) {
+                        append(content)
+                    }
+                }
+
                 else -> {
                     append(content) // Если тег не распознан, просто добавляем текст
                 }

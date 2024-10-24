@@ -22,17 +22,16 @@ import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContent
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContentProsCons
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.detailed_tabs
+import org.jetbrains.compose.resources.imageResource
 import org.jetbrains.compose.resources.stringArrayResource
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailedContent(
     component: DetailedComponent
 ) {
     val state by component.state.collectAsState()
     val lang = component.lang
-
 
 
     val scope = rememberCoroutineScope()
@@ -67,9 +66,11 @@ fun DetailedContent(
                     colors = lang.getColors(),
 
 
-                ),
+                    ),
                 alpha = 0.2f
             )
+            .padding(top = 36.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         DetailedLogo(
             lang = lang,
@@ -80,6 +81,7 @@ fun DetailedContent(
 
         Surface(
             modifier = Modifier
+                .sizeIn(maxWidth = 1000.dp)
                 .fillMaxSize()
                 .zIndex(0f),
             shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
