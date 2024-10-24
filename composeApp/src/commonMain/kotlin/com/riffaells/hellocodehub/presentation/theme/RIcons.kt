@@ -15,6 +15,10 @@ object RIcons {
     val Features = Icons.Rounded.Build // Иконка для Features (Настройки/Функции)
     val ProsCons = Icons.Rounded.ThumbsUpDown // Иконка для Pros & Cons (Плюсы и минусы)
 
+    val ThumbUp = Icons.Rounded.ThumbUp
+    val ThumbDown = Icons.Rounded.ThumbDown
+    val Check = Icons.Rounded.Check
+    val Close = Icons.Rounded.Close
 
     val Bolt = Icons.Rounded.Bolt
     val Crown = Icons.Rounded.Diamond
@@ -23,8 +27,6 @@ object RIcons {
     val Minimize = Icons.Rounded.Remove
     val Maximize = Icons.Rounded.CheckBoxOutlineBlank
     val Diamond = Icons.Outlined.Diamond
-    val Check = Icons.Rounded.Check
-    val Close = Icons.Rounded.Close
     val Guessed = Icons.Filled.ThumbUp
     val NotGuessed = Icons.Outlined.ThumbUp
     val Home = Icons.Rounded.Home

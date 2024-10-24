@@ -2,7 +2,10 @@ package com.riffaells.hellocodehub.presentation.ui.detailed.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -12,7 +15,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
 import com.riffaells.hellocodehub.presentation.theme.RIcons
-import org.jetbrains.compose.resources.imageResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 

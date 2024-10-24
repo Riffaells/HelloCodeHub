@@ -31,4 +31,9 @@
     <string name="paradigm_reflective">Reflective</string>
     <string name="paradigm_scripting">Scripting</string>
 
+
+
+    <string name="pros">Pros</string>
+    <string name="cons">Cons</string>
+
 </resources>

@@ -11,10 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.riffaells.hellocodehub.domain.components.detailed.DetailedComponent
@@ -25,9 +22,7 @@ import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContent
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContentProsCons
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.detailed_tabs
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringArrayResource
-import org.jetbrains.compose.resources.vectorResource
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -50,6 +45,7 @@ fun DetailedContent(
         tabs.size
     }
 
+    val scrollState = rememberScrollState()
 
     LaunchedEffect(key1 = tabIndex) {
         pagerState.animateScrollToPage(tabIndex)
@@ -137,7 +133,7 @@ fun DetailedContent(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(10.dp)
-                            .verticalScroll(rememberScrollState())
+                            .verticalScroll(scrollState)
                     ) {
                         when (index) {
                             0 -> TabContentDescription(lang)
