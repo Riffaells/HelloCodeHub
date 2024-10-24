@@ -22,7 +22,11 @@ import org.jetbrains.compose.resources.FontResource
 
 @Composable
 fun TabContentDescription(lang: ProgrammingLanguage) {
-    Text(text = lang.description)
+    Text(
+        modifier = Modifier.padding(8.dp),
+        text = styleText(lang.description),
+
+        )
 
 
     HighlightedCode(text = lang.code)
@@ -131,6 +135,49 @@ fun HighlightedCode(
 }
 
 
+fun styleText(
+    text: String,
+): AnnotatedString {
+    val code = text.trimIndent()
 
+    val annotatedString = buildAnnotatedString {
+
+        val tagPattern = Regex("<(\\w+)>(.*?)</\\1>")
+        var lastIndex = 0
+        // Поиск и стилизация по тегам
+        tagPattern.findAll(code).forEach { match ->
+            // Добавляем текст перед тегом
+            append(code.substring(lastIndex, match.range.first))
+
+            // Определяем тип тега и применяем стиль
+            val tag = match.groups[1]!!.value
+            val content = match.groups[2]!!.value
+            when (tag) {
+                "bold" -> {
+                    withStyle(
+                        style = SpanStyle(
+
+                            fontWeight = FontWeight.Bold
+                        )
+                    ) {
+                        append(content)
+                    }
+                }
+
+                else -> {
+                    append(content) // Если тег не распознан, просто добавляем текст
+                }
+            }
+            lastIndex = match.range.last + 1
+        }
+
+        // Добавляем остаток строки после последнего тега
+        if (lastIndex < code.length) {
+            append(code.substring(lastIndex))
+        }
+    }
+
+    return annotatedString
+}
 
 

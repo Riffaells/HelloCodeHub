@@ -1,21 +1,22 @@
 package com.riffaells.hellocodehub.presentation.ui.detailed
 
-import androidx.compose.foundation.*
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.materialkolor.ktx.rememberThemeColor
-import com.materialkolor.ktx.rememberThemeColors
 import com.riffaells.hellocodehub.domain.components.detailed.DetailedComponent
 import com.riffaells.hellocodehub.presentation.theme.RIcons
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.DetailedLogo
@@ -24,9 +25,9 @@ import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContent
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContentProsCons
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.detailed_tabs
-import org.jetbrains.compose.resources.imageResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringArrayResource
+import org.jetbrains.compose.resources.vectorResource
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -37,7 +38,8 @@ fun DetailedContent(
     val state by component.state.collectAsState()
     val lang = component.lang
 
-    val seedColor = rememberThemeColor(imageResource(lang.getLogo()), fallback = MaterialTheme.colorScheme.primary)
+
+
     val scope = rememberCoroutineScope()
 
 
@@ -47,6 +49,7 @@ fun DetailedContent(
     val pagerState = rememberPagerState {
         tabs.size
     }
+
 
     LaunchedEffect(key1 = tabIndex) {
         pagerState.animateScrollToPage(tabIndex)
@@ -65,12 +68,18 @@ fun DetailedContent(
             .fillMaxSize()
             .background(
                 Brush.linearGradient(
-                    colors = listOf(seedColor)
-                )
+                    colors = lang.getColors(),
+
+
+                ),
+                alpha = 0.2f
             )
     ) {
         DetailedLogo(
-            lang = lang
+            lang = lang,
+            onBack = {
+                component.onBackClicked()
+            }
         )
 
         Surface(
@@ -147,10 +156,4 @@ fun DetailedContent(
 
 
 }
-
-
-
-
-
-
 

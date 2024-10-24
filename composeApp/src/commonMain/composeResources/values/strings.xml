@@ -9,6 +9,9 @@
     </string-array>
 
     <!-- Paradigms -->
+
+    <string name="paradigms">Paradigms:</string>
+
     <string name="paradigm_assembly">Assembly</string>
     <string name="paradigm_block">Block-Structured</string>
     <string name="paradigm_cross_platform">Cross-Platform</string>

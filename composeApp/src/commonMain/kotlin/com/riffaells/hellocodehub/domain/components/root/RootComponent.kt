@@ -116,6 +116,7 @@ class DefaultRootComponent(
             onDetailed = {},
             di = di,
             lang = config.language,
+            onBack = ::onMainClicked
 
         )
 

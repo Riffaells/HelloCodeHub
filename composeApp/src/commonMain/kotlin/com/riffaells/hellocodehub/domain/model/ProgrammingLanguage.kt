@@ -1,6 +1,7 @@
 package com.riffaells.hellocodehub.domain.model
 
 import androidx.compose.runtime.Immutable
+import androidx.compose.ui.graphics.Color
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.kotlin
 import hellocodehub.composeapp.generated.resources.python
@@ -43,7 +44,33 @@ data class ProgrammingLanguage(
         else -> Res.drawable.python
     }
 
+    fun getColors() = when (logo) {
 
+        "kotlin" -> listOf("#7f52ff", "#c711e1", "#e44857").toColors()
+        "python" -> listOf("#387EB8", "#366994", "#FFE052", "#FFC331").toColors()
 
+        else -> emptyList<Color>()
+    }
+
+    private fun List<String>.toColors() = map {
+        hexToColor(it)
+    }
+
+    private fun hexToColor(hex: String): Color {
+        return if (hex.length == 7) {
+            // Преобразуем строку без альфа-канала (RRGGBB)
+            val red = hex.substring(1, 3).toInt(16)
+            val green = hex.substring(3, 5).toInt(16)
+            val blue = hex.substring(5, 7).toInt(16)
+            Color(red, green, blue)
+        } else {
+            // Преобразуем строку с альфа-каналом (RRGGBBAA)
+            val red = hex.substring(1, 3).toInt(16)
+            val green = hex.substring(3, 5).toInt(16)
+            val blue = hex.substring(5, 7).toInt(16)
+            val alpha = hex.substring(7, 9).toInt(16)
+            Color(red, green, blue, alpha)
+        }
+    }
 
 }
