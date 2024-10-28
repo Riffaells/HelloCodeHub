@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import com.arkivanov.decompose.DefaultComponentContext
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.riffaells.hellocodehub.domain.components.root.DefaultRootComponent
-import com.riffaells.hellocodehub.presentation.ui.root.RootContent
+import com.riffaells.hellocodehub.presentation.ui.root.App
 import org.kodein.di.DI
 import org.kodein.di.DIAware
 import org.kodein.di.android.closestDI
@@ -34,8 +34,8 @@ class MainActivity : ComponentActivity(), DIAware {
                 val root = DefaultRootComponent(DefaultComponentContext(lifecycle), di = localDI())
 
 
-                RootContent(component = root) { c ->
-                    App(
+                App(component = root) { c ->
+                    RootContent(
                         component = c,
                     )
                 }

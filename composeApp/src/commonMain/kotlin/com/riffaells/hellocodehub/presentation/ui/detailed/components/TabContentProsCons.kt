@@ -4,10 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Card
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,19 +19,24 @@ import hellocodehub.composeapp.generated.resources.cons
 import hellocodehub.composeapp.generated.resources.pros
 import org.jetbrains.compose.resources.stringResource
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun TabContentProsCons(lang: ProgrammingLanguage) {
-    Row(
+    FlowRow(
         modifier = Modifier
-            .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceAround,
+            .fillMaxWidth()
+            .wrapContentHeight(),
+        horizontalArrangement = Arrangement.SpaceBetween,
     ) {
 
         val pros = lang.prosAndCons.pros
         val cons = lang.prosAndCons.cons
 
         CardNote(
-            modifier = Modifier.weight(1f),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+                .weight(1f),
             title = stringResource(Res.string.pros),
             vector = RIcons.ThumbUp,
             subImg = RIcons.Check,
@@ -46,7 +48,10 @@ fun TabContentProsCons(lang: ProgrammingLanguage) {
             )
         )
         CardNote(
-            modifier = Modifier.weight(1f),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+                .weight(1f),
             title = stringResource(Res.string.cons),
             vector = RIcons.ThumbDown,
             subImg = RIcons.Close,
@@ -71,56 +76,68 @@ fun CardNote(
     colors: List<String>
 
 ) {
-    Card(modifier = modifier.padding(8.dp)) {
-        Column(
+    Box(
+        modifier = modifier
+    ) {
+
+        Surface(
             modifier = Modifier
-                .background(
-                    Brush.linearGradient(
-                        colors = colors.map { ProgrammingLanguage.hexToColor(it) },
-
-
-                        ),
-                    alpha = 0.3f
-                )
+                .sizeIn(minWidth = 200.dp)
                 .padding(4.dp),
+            shape = MaterialTheme.shapes.medium,
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(
+                        Brush.linearGradient(
+                            colors = colors.map { ProgrammingLanguage.hexToColor(it) },
+
+
+                            ),
+                        alpha = 0.3f
+                    ),
 //            horizontalAlignment = Alignment.CenterHorizontally
 
-        ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
             ) {
-                Icon(
-                    imageVector = vector,
-                    contentDescription = title,
-
-                    )
-
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.headlineMedium,
-                )
-            }
-
-            for (item in lst) {
                 Row(
-                    modifier = Modifier.padding(8.dp),
+                    modifier = Modifier,
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Icon(
-                        modifier = Modifier.padding(2.dp),
-                        imageVector = subImg,
+                        modifier = Modifier.padding(4.dp),
+                        imageVector = vector,
                         contentDescription = title,
-                        tint = MaterialTheme.colorScheme.primary,
-                    )
+
+                        )
 
                     Text(
-                        text = item,
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Normal,
+                        text = title,
+                        style = MaterialTheme.typography.headlineMedium,
                     )
                 }
-            }
-        }
 
+                for (item in lst) {
+                    Row(
+                        modifier = Modifier.padding(8.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Icon(
+                            modifier = Modifier.padding(2.dp),
+                            imageVector = subImg,
+                            contentDescription = title,
+                            tint = MaterialTheme.colorScheme.primary,
+                        )
+
+                        Text(
+                            text = item,
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Normal,
+                        )
+                    }
+                }
+            }
+
+        }
     }
 }

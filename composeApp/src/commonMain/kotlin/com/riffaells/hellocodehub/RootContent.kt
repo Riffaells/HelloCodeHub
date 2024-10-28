@@ -14,13 +14,16 @@ import com.riffaells.hellocodehub.presentation.ui.detailed.DetailedContent
 import com.riffaells.hellocodehub.presentation.ui.main.MainContent
 
 @Composable
-fun App(
+fun RootContent(
     component: RootComponent,
     modifier: Modifier = Modifier,
 ) {
     val stateRoot by component.state.collectAsState()
 
+
+
     Surface(modifier = modifier.background(Color.Transparent).fillMaxSize()) {
+
 
         Children(
             stack = component.childStack,
@@ -34,6 +37,7 @@ fun App(
             }
         }
     }
+
 
 
 }

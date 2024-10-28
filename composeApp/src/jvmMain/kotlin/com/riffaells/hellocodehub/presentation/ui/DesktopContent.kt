@@ -1,16 +1,11 @@
 package com.riffaells.hellocodehub.presentation.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowScope
-import com.riffaells.hellocodehub.App
+import com.riffaells.hellocodehub.RootContent
 import com.riffaells.hellocodehub.domain.components.root.RootComponent
 
 @Composable
@@ -30,7 +25,7 @@ fun WindowScope.DesktopContent(
 //            modifier = Modifier.background(Color.Transparent),
 //        ) {
 
-        App(
+        RootContent(
             modifier = Modifier,
             component = component,
         )

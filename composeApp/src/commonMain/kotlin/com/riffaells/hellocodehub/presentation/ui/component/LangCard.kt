@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
+import com.riffaells.hellocodehub.presentation.ui.detailed.components.styleText
 import org.jetbrains.compose.resources.painterResource
 
 
@@ -39,7 +40,7 @@ fun LangCard(
                     Brush.linearGradient(
                         colors = lang.getColors(),
                         ),
-                    alpha = 0.2f
+                    alpha = 0.05f
                 ),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -62,7 +63,7 @@ fun LangCard(
 
                 Text(
                     modifier = Modifier.padding(end = 8.dp, bottom = 4.dp),
-                    text = lang.description,
+                    text = styleText(lang.description),
                     style = MaterialTheme.typography.titleSmall,
                     maxLines = 3,
                     overflow = TextOverflow.Ellipsis

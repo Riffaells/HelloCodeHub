@@ -9,12 +9,11 @@ import com.riffaells.hellocodehub.presentation.theme.AppTheme
 import hellocodehub.composeapp.generated.resources.Res
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 @Composable
-fun RootContent(
+fun App(
     modifier: Modifier = Modifier,
     component: DefaultRootComponent,
     content: @Composable (DefaultRootComponent) -> Unit

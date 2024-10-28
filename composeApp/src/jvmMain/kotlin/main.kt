@@ -9,7 +9,7 @@ import com.arkivanov.mvikotlin.core.utils.setMainThreadId
 import com.riffaells.hellocodehub.domain.components.root.DefaultRootComponent
 import com.riffaells.hellocodehub.di.kodein
 import com.riffaells.hellocodehub.presentation.ui.DesktopContent
-import com.riffaells.hellocodehub.presentation.ui.root.RootContent
+import com.riffaells.hellocodehub.presentation.ui.root.App
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.app
 import org.jetbrains.compose.resources.stringResource
@@ -37,13 +37,15 @@ fun main() {
 
 
 
+
+
             Window(
                 onCloseRequest = ::exitApplication,
                 state = windowState,
                 title = stringResource(Res.string.app),
                 decoration = WindowDecoration.Undecorated(),
             ) {
-                RootContent(
+                App(
                     modifier = Modifier,
                     component = root,
                 ) { component ->
@@ -54,6 +56,7 @@ fun main() {
                         onCloseRequest = ::exitApplication,
                         onMinimizeRequest = { windowState.isMinimized = true },
                         onMaximizeRequest = {
+
                             if (windowState.placement == WindowPlacement.Floating)
                                 windowState.placement = WindowPlacement.Maximized
                             else

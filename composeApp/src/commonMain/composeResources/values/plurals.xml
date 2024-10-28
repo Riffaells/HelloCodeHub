@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <plurals name="years">
+        <item quantity="zero">year</item>
+        <item quantity="one">year</item>
+        <item quantity="other">years</item>
+    </plurals>
+
+
+</resources>

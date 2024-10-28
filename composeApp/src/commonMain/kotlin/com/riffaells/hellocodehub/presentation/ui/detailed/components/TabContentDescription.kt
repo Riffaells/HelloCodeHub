@@ -5,10 +5,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
@@ -30,7 +29,7 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun TabContentDescription(lang: ProgrammingLanguage) {
     Text(
-        modifier = Modifier.padding(8.dp),
+        modifier = Modifier.padding(4.dp),
         text = styleText(lang.description),
 
         )
@@ -47,8 +46,9 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
                 title = stringResource(Res.string.name_origin),
                 style = MaterialTheme.typography.headlineSmall,
 
-            ) {
+                ) {
                 Text(
+                    modifier = Modifier.padding(start = 4.dp),
                     text = lang.history.nameOrigin
                 )
             }
@@ -58,6 +58,7 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
                 style = MaterialTheme.typography.headlineSmall,
             ) {
                 Text(
+                    modifier = Modifier.padding(start = 4.dp),
                     text = lang.history.developmentStart
                 )
             }
@@ -67,6 +68,7 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
                 style = MaterialTheme.typography.headlineSmall,
             ) {
                 Text(
+                    modifier = Modifier.padding(start = 4.dp),
                     text = lang.history.firstRelease
                 )
             }
@@ -83,6 +85,37 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
         HighlightedCode(text = lang.code)
     }
 
+
+
+    Icon(
+        imageVector = Icons.Default.Build,
+        contentDescription = "Год начала разработки"
+    )
+
+
+//    Icon(
+//        imageVector = Icons.Default.Code,
+//        contentDescription = "Год начала разработки"
+//    )
+//
+//
+//
+//    Icon(
+//        imageVector = Icons.Default.Construction,
+//        contentDescription = "Год первой версии"
+//    )
+//
+//
+//    Icon(
+//        imageVector = Icons.Default.Publish,
+//        contentDescription = "Год первой версии"
+//    )
+//
+//
+//    Icon(
+//        imageVector = Icons.Default.Update,
+//        contentDescription = "Год первой версии"
+//    )
 
 }
 
