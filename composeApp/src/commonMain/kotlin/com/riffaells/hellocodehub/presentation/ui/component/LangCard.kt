@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -26,6 +27,7 @@ fun LangCard(
 ) {
     Card(
         modifier = modifier
+            .padding(8.dp)
             .sizeIn(maxWidth = 700.dp)
             .fillMaxWidth()
     ) {
@@ -39,6 +41,8 @@ fun LangCard(
                 .background(
                     Brush.linearGradient(
                         colors = lang.getColors(),
+                        start = Offset(0f, Float.POSITIVE_INFINITY),  // Левый нижний угол
+                        end = Offset(Float.POSITIVE_INFINITY, 0f)     // Правый верхний угол
                         ),
                     alpha = 0.05f
                 ),
@@ -46,7 +50,7 @@ fun LangCard(
         ) {
             Image(
                 modifier = Modifier
-                    .sizeIn(maxHeight = 70.dp)
+                    .sizeIn(maxHeight = 100.dp)
                     .padding(8.dp),
                 painter = painterResource(lang.getLogo()),
                 contentDescription = null,

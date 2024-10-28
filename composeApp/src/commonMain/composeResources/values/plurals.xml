@@ -5,6 +5,16 @@
         <item quantity="one">year</item>
         <item quantity="other">years</item>
     </plurals>
+    <plurals name="creators">
+        <item quantity="zero">Creator</item>
+        <item quantity="one">Creator</item>
+        <item quantity="other">Creators</item>
+    </plurals>
 
 
+    <plurals name="paradigms">
+        <item quantity="zero">Paradigm</item>
+        <item quantity="one">Paradigms</item>
+        <item quantity="other">Paradigms</item>
+    </plurals>
 </resources>

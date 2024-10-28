@@ -10,7 +10,6 @@
 
     <!-- Paradigms -->
 
-    <string name="paradigms">Paradigms:</string>
     <string name="name_origin">Name Origin</string>
     <string name="development_start">Development Start</string>
     <string name="first_release">First Release</string>
@@ -40,4 +39,16 @@
     <string name="pros">Pros</string>
     <string name="cons">Cons</string>
 
+
+
+    <string name="features">Features</string>
+    <string name="designStyle">Design Style</string>
+    <string name="fileExtensions">File Extensions</string>
+    <string name="community">Community</string>
+    <string name="future">Future</string>
+
+    <string name="ideSupport">IDE Support</string>
+    <string name="popularFrameworks">Popular Frameworks</string>
+    <string name="compatibility">Compatibility</string>
+    <string name="relatedLanguages">Related Languages</string>
 </resources>
