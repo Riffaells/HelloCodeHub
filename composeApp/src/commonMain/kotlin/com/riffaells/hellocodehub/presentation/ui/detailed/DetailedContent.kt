@@ -44,7 +44,6 @@ fun DetailedContent(
         tabs.size
     }
 
-    val scrollState = rememberScrollState()
 
     LaunchedEffect(key1 = tabIndex) {
         pagerState.animateScrollToPage(tabIndex)
@@ -131,27 +130,39 @@ fun DetailedContent(
                         .fillMaxWidth()
                 ) { index ->
 
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(10.dp)
-                            .verticalScroll(scrollState)
-                    ) {
-                        when (index) {
-                            0 -> TabContentDescription(lang)
-                            1 -> TabContentFeatures(lang)
-                            2 -> TabContentProsCons(lang)
-                        }
-
-
+                    val mod = Modifier
+                        .fillMaxSize()
+                        .padding(10.dp)
+                    when (index) {
+                        0 -> TabMain(mod) { TabContentDescription(lang) }
+                        1 -> TabMain(mod) { TabContentFeatures(lang) }
+                        2 -> TabMain(mod) { TabContentProsCons(lang) }
                     }
+
+
                 }
-
-
             }
+
+
         }
     }
-
-
 }
 
+
+
+
+@Composable
+fun TabMain(
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit
+) {
+
+    val scrollState = rememberScrollState()
+
+    Column(
+        modifier = modifier
+            .verticalScroll(scrollState)
+    ) {
+        content()
+    }
+}

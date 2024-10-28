@@ -44,6 +44,13 @@ data class ProgrammingLanguage(
         "kotlin" -> Res.drawable.kotlin
         "python" -> Res.drawable.python
         "rust" -> Res.drawable.rust
+
+        "csharp" -> Res.drawable.csharp
+        "java" -> Res.drawable.java
+        "javascript" -> Res.drawable.javascript
+        "php" -> Res.drawable.php
+        "ruby" -> Res.drawable.ruby
+        "c" -> Res.drawable.c
         else -> Res.drawable.kotlin
     }
 
@@ -54,6 +61,14 @@ data class ProgrammingLanguage(
         "kotlin" -> listOf("#7f52ff", "#c711e1", "#e44857").toColors()
         "python" -> listOf("#FCD054", "#FCC44C", "#2C7CAC", "#2C72A0").toColors()
         "rust" -> listOf("#B02C14", "#E33414", "#D6361C").toColors()
+
+
+        "csharp" -> listOf("#874286", "#CCA4C4", "#CCA4C4").toColors()
+        "java" -> listOf("#4C839C", "#EC741C").toColors()
+        "javascript" -> listOf("#FBDC43", "#938629", "#FCFB4B").toColors()
+        "php" -> listOf("#47586F","#5A7BB1", "#245494", "#6490CC").toColors()
+        "ruby" -> listOf("#A21F0E", "#CB2D1B", "#E4513C").toColors()
+        "c" -> listOf("#055088", "#5C9BCC", "#74ACDE", "#BDD4E7").toColors()
 
         else -> listOf("#659ad2", "#00599c").toColors()
     }

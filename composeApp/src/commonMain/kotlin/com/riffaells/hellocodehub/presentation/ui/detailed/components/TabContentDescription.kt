@@ -178,6 +178,11 @@ fun HighlightedCode(
                             append(content)
                         }
                     }
+                    "rstatic" -> {
+                        withStyle(style = SpanStyle(color = codeColor.static)) {
+                            append(content)
+                        }
+                    }
 
                     else -> {
                         append(content) // Если тег не распознан, просто добавляем текст
