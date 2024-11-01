@@ -32,3 +32,9 @@ Run browser UI tests: `./gradlew :composeApp:jsBrowserTest`
 Run the browser application: `./gradlew :composeApp:wasmJsBrowserDevelopmentRun --continue`
 Run browser UI tests: `./gradlew :composeApp:wasmJsBrowserTest`
 
+
+
+### TODO
+- [ ] Сделать кликабельные парадигмы
+- [ ] Сделать кликабельные языки
+- [ ] Скролинг уменьшает лого

@@ -15,30 +15,87 @@
     <string name="first_release">First Release</string>
     <string name="hello_world">Приветствие в мире</string>
 
-    <string name="paradigm_assembly">Assembly</string>
-    <string name="paradigm_block">Block-Structured</string>
-    <string name="paradigm_cross_platform">Cross-Platform</string>
-    <string name="paradigm_data_oriented">Data-Oriented</string>
-    <string name="paradigm_declarative">Declarative</string>
-    <string name="paradigm_functional">Functional</string>
-    <string name="paradigm_generic">Generic</string>
-    <string name="paradigm_high_level">High-Level</string>
-    <string name="paradigm_imperative">Imperative</string>
-    <string name="paradigm_logic">Logic</string>
-    <string name="paradigm_low_level">Low-Level</string>
-    <string name="paradigm_markup">Markup</string>
-    <string name="paradigm_multi">Multi-paradigm</string>
-    <string name="paradigm_object_oriented">Object-Oriented</string>
-    <string name="paradigm_parallel">Parallel</string>
-    <string name="paradigm_procedural">Procedural</string>
-    <string name="paradigm_reflective">Reflective</string>
-    <string name="paradigm_scripting">Scripting</string>
+    <string-array name="paradigms">
+        <item>Assembly</item>>
+        <item>Block-Structured</item>>
+        <item>Cross-Platform</item>>
+        <item>Data-Oriented</item>>
+        <item>Declarative</item>>
+        <item>Functional</item>>
+        <item>Generic</item>>
+        <item>High-Level</item>>
+        <item>Imperative</item>>
+        <item>Logic</item>>
+        <item>Low-Level</item>>
+        <item>Markup</item>>
+        <item>Multi-paradigm</item>>
+        <item>Object-Oriented</item>>
+        <item>Parallel</item>>
+        <item>Procedural</item>>
+        <item>Reflective</item>>
+        <item>Scripting</item>>
+    </string-array>
 
+    <string-array name="paradigm_descriptions">
+        <item>Assembly: Programming in assembly language, which allows working with low-level processor instructions,
+            offering high performance and control over hardware.
+        </item>
+        <item>Block-Structured: A programming style that uses block structure to manage variable scope and control the
+            flow of the program.
+        </item>
+        <item>Cross-Platform: Developing software compatible with multiple operating systems or devices, allowing the
+            same code to run across different platforms.
+        </item>
+        <item>Data-Oriented: A paradigm focused on organizing and managing data, rather than the logic of processing
+            that data.
+        </item>
+        <item>Declarative: An approach where the developer specifies what should be done, rather than how to do it.
+            Example: SQL, where the query describes the result, not the sequence of operations.
+        </item>
+        <item>Functional: A paradigm that focuses on using pure functions and immutable data to solve tasks, supporting
+            higher-order functions and recursion.
+        </item>
+        <item>Generic: The use of generics to work with data types that are defined at compile time, allowing code reuse
+            for different types.
+        </item>
+        <item>High-Level: Paradigms that abstract many details of hardware management, making code more readable and
+            understandable. Examples: Python, Java.
+        </item>
+        <item>Imperative: A style where the program specifies sequential steps to accomplish a task, focusing on "how"
+            to do it rather than "what" should be done.
+        </item>
+        <item>Logic: Logic-based programming, where the developer defines facts and rules, and the system draws
+            conclusions. Example: Prolog.
+        </item>
+        <item>Low-Level: Paradigms close to machine code and the processor, providing maximum control over resources but
+            requiring detailed system knowledge.
+        </item>
+        <item>Markup: A way of marking up data, used to describe the structure and appearance of text or documents.
+            Example: HTML, XML.
+        </item>
+        <item>Multi-paradigm: Supports multiple paradigms within a single language, allowing for the use of suitable
+            programming styles depending on the task.
+        </item>
+        <item>Object-Oriented: A paradigm focused on objects, which are combinations of data and methods, simplifying
+            modular and reusable programming.
+        </item>
+        <item>Parallel: A paradigm focused on performing tasks in parallel to increase performance, especially on
+            multi-core systems.
+        </item>
+        <item>Procedural: Programming based on procedures or functions that execute sequential steps and change the
+            state of the program.
+        </item>
+        <item>Reflective: The ability of a program to analyze and change its behavior during execution. Example:
+            languages with reflection support, such as Java.
+        </item>
+        <item>Scripting: Using scripts to automate tasks or quickly execute operations, commonly used in web development
+            and system administration.
+        </item>
+    </string-array>
 
 
     <string name="pros">Pros</string>
     <string name="cons">Cons</string>
-
 
 
     <string name="features">Features</string>

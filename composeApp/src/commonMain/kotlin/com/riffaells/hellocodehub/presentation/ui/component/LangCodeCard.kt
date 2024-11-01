@@ -16,12 +16,13 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
+import com.riffaells.hellocodehub.presentation.ui.detailed.components.HighlightedCode
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.styleText
 import org.jetbrains.compose.resources.painterResource
 
 
 @Composable
-fun LangCard(
+fun LangCodeCard(
     modifier: Modifier = Modifier,
     lang: ProgrammingLanguage,
     onClick: () -> Unit
@@ -38,9 +39,9 @@ fun LangCard(
 
         Row(
             modifier = Modifier
-                .clickable {
-                    onClick()
-                }
+//                .clickable {
+//                    onClick()
+//                }
                 .background(
                     Brush.linearGradient(
                         colors = lang.getColors(),
@@ -60,23 +61,8 @@ fun LangCard(
                 alignment = Alignment.CenterStart
             )
             Column {
-                Text(
 
-                    modifier = Modifier.padding(end = 8.dp),
-                    text = lang.name,
-                    style = MaterialTheme.typography.headlineMedium,
-                )
-
-
-                Text(
-                    modifier = Modifier.padding(end = 8.dp, bottom = 4.dp),
-                    text = styleText(lang.description),
-                    style = MaterialTheme.typography.titleSmall,
-                    maxLines = 3,
-                    overflow = TextOverflow.Ellipsis
-
-
-                )
+                HighlightedCode(text = lang.code)
 
             }
         }

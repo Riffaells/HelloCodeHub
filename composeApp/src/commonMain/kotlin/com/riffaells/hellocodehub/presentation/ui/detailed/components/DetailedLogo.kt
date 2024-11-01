@@ -23,12 +23,14 @@ import androidx.compose.ui.zIndex
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
 import com.riffaells.hellocodehub.presentation.theme.RIcons
 import hellocodehub.composeapp.generated.resources.Res
+import hellocodehub.composeapp.generated.resources.paradigms
 import hellocodehub.composeapp.generated.resources.years
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.pluralStringResource
+import org.jetbrains.compose.resources.stringArrayResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -36,8 +38,9 @@ fun DetailedLogo(
     modifier: Modifier = Modifier,
     lang: ProgrammingLanguage,
     onBack: () -> Unit,
+    isRowLayout: Boolean
 
-    ) {
+) {
 
     Box {
         IconButton(
@@ -67,37 +70,64 @@ fun DetailedLogo(
         )
 
 
-        Column(
-            modifier = modifier
-                .fillMaxWidth()
-
-                .padding(12.dp, 30.dp)
-                .zIndex(1f)
-                .align(Alignment.Center),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-
-
-            Image(
-                modifier = Modifier
-                    .sizeIn(maxHeight = 120.dp, minHeight = 120.dp),
-                painter = painterResource(lang.getLogo()),
-                contentDescription = lang.name
-            )
-
-            Text(
-                text = lang.name,
-                style = MaterialTheme.typography.displayMedium,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary
-            )
-            Text(
-                text = stringResource(lang.paradigms.getStringParadigms()[0]),
-                style = MaterialTheme.typography.headlineSmall,
-//                fontWeight = FontWeight.Bold,
-            )
-
+        if (isRowLayout) {
+            Row(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(12.dp, 30.dp)
+                    .zIndex(1f)
+                    .align(Alignment.Center),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Image(
+                    modifier = Modifier
+                        .sizeIn(maxHeight = 60.dp, minHeight = 60.dp), // Уменьшение размера логотипа в Row
+                    painter = painterResource(lang.getLogo()),
+                    contentDescription = lang.name
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Column {
+                    Text(
+                        text = lang.name,
+                        style = MaterialTheme.typography.displayMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    Text(
+                        text = stringArrayResource(Res.array.paradigms)[0],
+                        style = MaterialTheme.typography.headlineSmall,
+                    )
+                }
+            }
+        } else {
+            Column(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(12.dp, 30.dp)
+                    .zIndex(1f)
+                    .align(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Image(
+                    modifier = Modifier
+                        .sizeIn(maxHeight = 120.dp, minHeight = 120.dp), // Размер логотипа для Column
+                    painter = painterResource(lang.getLogo()),
+                    contentDescription = lang.name
+                )
+                Text(
+                    text = lang.name,
+                    style = MaterialTheme.typography.displayMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    text = lang.paradigms.getStringParadigms(stringArrayResource(Res.array.paradigms))[0],
+                    style = MaterialTheme.typography.headlineSmall,
+                )
+            }
         }
+
     }
 }
 
@@ -113,11 +143,12 @@ fun YearsContent(
     val color = MaterialTheme.colorScheme.onPrimaryContainer
     Column(
         modifier = modifier
-            .background(Brush.linearGradient(
-                listOf(color,color)
-            ), CircleShape, alpha = 0.8f)
-            .circleLayout()
-        ,
+            .background(
+                Brush.linearGradient(
+                    listOf(color, color)
+                ), CircleShape, alpha = 0.8f
+            )
+            .circleLayout(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
@@ -140,6 +171,7 @@ fun YearsContent(
         )
     }
 }
+
 //}
 fun Modifier.circleLayout() =
     layout { measurable, constraints ->
@@ -154,6 +186,6 @@ fun Modifier.circleLayout() =
         //назначить размер и положение центра
         layout(newDiameter, newDiameter) {
             // Где размещается составной элемент
-            placeable.placeRelative((newDiameter-currentWidth)/2, (newDiameter-currentHeight)/2)
+            placeable.placeRelative((newDiameter - currentWidth) / 2, (newDiameter - currentHeight) / 2)
         }
     }

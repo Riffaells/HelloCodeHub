@@ -14,11 +14,13 @@ interface DetailedStore : Store<DetailedStore.Intent, DetailedStore.State, Nothi
 
     sealed interface Intent {
 
+
+        data class UpdateIndex(val index: Int) : Intent
     }
 
     @Serializable
     data class State(
-        val gameId: Long = -1,
+        val tabIndex: Int = 0,
     )
 }
 
@@ -39,7 +41,7 @@ internal class DetailedStoreFactory(
             ) {}
 
     private sealed interface Msg {
-        data class IsGameStarted(val gameId: Long) : Msg
+        data class UpdateIndex(val index: Int) : Msg
     }
 
     private inner class ExecutorImpl :
@@ -53,7 +55,7 @@ internal class DetailedStoreFactory(
 
         override fun executeIntent(intent: DetailedStore.Intent): Unit =
             when (intent) {
-                else -> TODO()
+                is DetailedStore.Intent.UpdateIndex -> dispatch(Msg.UpdateIndex(intent.index))
             }
 
 
@@ -62,7 +64,7 @@ internal class DetailedStoreFactory(
     private object ReducerImpl : Reducer<DetailedStore.State, Msg> {
         override fun DetailedStore.State.reduce(msg: Msg): DetailedStore.State =
             when (msg) {
-                is Msg.IsGameStarted -> copy(gameId = msg.gameId)
+                is Msg.UpdateIndex -> copy(tabIndex = msg.index)
             }
     }
 }

@@ -13,7 +13,7 @@ import kotlinx.serialization.json.Json
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 @Composable
-fun App(
+fun AppContent(
     modifier: Modifier = Modifier,
     component: DefaultRootComponent,
     content: @Composable (DefaultRootComponent) -> Unit

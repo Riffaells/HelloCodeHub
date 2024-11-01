@@ -32,7 +32,7 @@ fun RootContent(
         ) {
             when (val instance = it.instance) {
                 is RootComponent.Child.MainChild -> MainContent(stateRoot = stateRoot, component = instance.component)
-                is RootComponent.Child.DetailedChild -> DetailedContent(component = instance.component)
+                is RootComponent.Child.DetailedChild -> DetailedContent(stateRoot = stateRoot, component = instance.component)
 
             }
         }

@@ -2,10 +2,7 @@ package com.riffaells.hellocodehub.domain.components.root
 
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.decompose.ExperimentalDecomposeApi
-import com.arkivanov.decompose.router.stack.ChildStack
-import com.arkivanov.decompose.router.stack.StackNavigation
-import com.arkivanov.decompose.router.stack.bringToFront
-import com.arkivanov.decompose.router.stack.childStack
+import com.arkivanov.decompose.router.stack.*
 import com.arkivanov.decompose.router.stack.webhistory.WebHistoryController
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.mvikotlin.core.instancekeeper.getStore
@@ -113,11 +110,12 @@ class DefaultRootComponent(
     private fun detailedComponent(componentContext: ComponentContext, config: Config.LangDetailed): DefaultDetailedComponent =
         DefaultDetailedComponent(
             componentContext = componentContext,
-            onDetailed = {},
+            onDetailed = ::onLangDetailedClicked,
             di = di,
             lang = config.language,
-            onBack = ::onMainClicked
-
+            onBack = {
+                navigation.pop()
+            }
         )
 
 
@@ -127,7 +125,7 @@ class DefaultRootComponent(
 
 
     override fun onLangDetailedClicked(language: ProgrammingLanguage) {
-        navigation.bringToFront(Config.LangDetailed(language))
+        navigation.pushToFront(Config.LangDetailed(language))
     }
 
 

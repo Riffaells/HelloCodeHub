@@ -20,7 +20,7 @@ interface DetailedComponent {
 
     fun onEvent(event: DetailedStore.Intent)
 
-    fun onLangDetailedClicked(lang: String)
+    fun onLangDetailedClicked(lang: ProgrammingLanguage)
 
     fun onBackClicked()
 }
@@ -29,7 +29,7 @@ interface DetailedComponent {
 class DefaultDetailedComponent(
     componentContext: ComponentContext,
     storeFactory: StoreFactory = DefaultStoreFactory(),
-    private val onDetailed: (String) -> Unit = {},
+    private val onDetailed: (ProgrammingLanguage) -> Unit = {},
     private val onBack: () -> Unit,
     override val lang: ProgrammingLanguage,
     override val di: DI,
@@ -51,7 +51,7 @@ class DefaultDetailedComponent(
         store.accept(event)
     }
 
-    override fun onLangDetailedClicked(lang: String) {
+    override fun onLangDetailedClicked(lang: ProgrammingLanguage) {
         onDetailed(lang)
     }
 

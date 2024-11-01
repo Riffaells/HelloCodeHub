@@ -5,10 +5,13 @@
         <item quantity="one">year</item>
         <item quantity="other">years</item>
     </plurals>
-    <plurals name="creators">
-        <item quantity="zero">Creator</item>
-        <item quantity="one">Creator</item>
-        <item quantity="other">Creators</item>
+
+    <plurals name="designedBy">
+        <item quantity="other">Designed by</item>
+    </plurals>
+
+    <plurals name="developer">
+        <item quantity="other">Developer</item>
     </plurals>
 
 

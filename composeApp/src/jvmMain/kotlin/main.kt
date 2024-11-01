@@ -9,7 +9,7 @@ import com.arkivanov.mvikotlin.core.utils.setMainThreadId
 import com.riffaells.hellocodehub.domain.components.root.DefaultRootComponent
 import com.riffaells.hellocodehub.di.kodein
 import com.riffaells.hellocodehub.presentation.ui.DesktopContent
-import com.riffaells.hellocodehub.presentation.ui.root.App
+import com.riffaells.hellocodehub.presentation.ui.root.AppContent
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.app
 import org.jetbrains.compose.resources.stringResource
@@ -45,7 +45,7 @@ fun main() {
                 title = stringResource(Res.string.app),
                 decoration = WindowDecoration.Undecorated(),
             ) {
-                App(
+                AppContent(
                     modifier = Modifier,
                     component = root,
                 ) { component ->

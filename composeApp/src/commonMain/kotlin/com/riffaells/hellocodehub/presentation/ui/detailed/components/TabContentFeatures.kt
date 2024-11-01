@@ -17,13 +17,17 @@ import hellocodehub.composeapp.generated.resources.community
 import hellocodehub.composeapp.generated.resources.future
 import hellocodehub.composeapp.generated.resources.paradigms
 import org.jetbrains.compose.resources.pluralStringResource
+import org.jetbrains.compose.resources.stringArrayResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun TabContentFeatures(lang: ProgrammingLanguage) {
+fun TabContentFeatures(
+    lang: ProgrammingLanguage,
+    onLang: (String) -> Unit,
+) {
 
     TitleChips(
-        text = stringResource(Res.string.features, lang.features.size,),
+        text = stringResource(Res.string.features, lang.features.size),
         lst = lang.features,
     )
 
@@ -39,8 +43,12 @@ fun TabContentFeatures(lang: ProgrammingLanguage) {
             )
 
             TitleChips(
-                text = pluralStringResource(Res.plurals.creators, lang.creators.size,),
-                lst = lang.creators,
+                text = pluralStringResource(Res.plurals.designedBy, lang.designedBy.size),
+                lst = lang.designedBy,
+            )
+            TitleChips(
+                text = pluralStringResource(Res.plurals.developer, lang.developer.size),
+                lst = lang.developer,
             )
 
             TitleChips(
@@ -54,7 +62,7 @@ fun TabContentFeatures(lang: ProgrammingLanguage) {
 
             TitleChips(
                 text = pluralStringResource(Res.plurals.paradigms, lang.paradigms.paradigms.size),
-                lst = lang.paradigms.getStringParadigms().map { stringResource(it) },
+                lst = lang.paradigms.getStringParadigms(stringArrayResource(Res.array.paradigms)),
             )
 
 
@@ -65,6 +73,7 @@ fun TabContentFeatures(lang: ProgrammingLanguage) {
             TitleChips(
                 text = stringResource(Res.string.relatedLanguages),
                 lst = lang.relatedLanguages,
+                onClick = onLang,
             )
         }
     }
@@ -110,25 +119,18 @@ fun TitleMap(
     TitleText(
         title = text
     ) {
-        Column(
+
+        Text(
             modifier = modifier
                 .padding(8.dp),
-        ) {
+            text = styleText(map.map { (key, value) -> "<bold>${key}</bold> - $value" }.joinToString("\n")),
+            style = MaterialTheme.typography.titleMedium,
+        )
 
-            for ((key, value) in map) {
-
-                Text(
-                    modifier = Modifier,
-                    text = styleText("<bold>${key}</bold> - $value"),
-                )
-
-            }
-        }
 
     }
 
 }
-
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -136,35 +138,25 @@ fun TitleChips(
     modifier: Modifier = Modifier,
     text: String,
     lst: List<String>,
+    onClick: (String) -> Unit = {},
 ) {
-
-
     FlowRow(
-        modifier = modifier,
+        modifier = modifier.padding(start = 4.dp)
     ) {
         Text(
-            modifier = Modifier.padding(start = 4.dp).align(Alignment.CenterVertically),
             text = text,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.align(Alignment.CenterVertically)
         )
 
-        for (l in lst) {
+        lst.forEach { label ->
             SuggestionChip(
-                modifier = Modifier.padding(start = 4.dp),
-                onClick = {
-
-                },
-                label = {
-                    Text(
-                        text = l,
-                    )
-                },
-                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier.padding(start = 4.dp).align(Alignment.CenterVertically),
+                onClick = { onClick(label) },
+                label = { Text(text = label) },
+                shape = MaterialTheme.shapes.small,
             )
-
         }
-
     }
-
-
 }
+

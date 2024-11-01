@@ -12,8 +12,12 @@
     "code": "<rkey>fun</rkey> <rfunc>main</rfunc>() {\n    <rfunc>println</rfunc>(<rstr>\"Hello, World!\"</rstr>)\n}",
     "developmentStartYear": "2011",
     "firstVersionYear": "2016",
-    "creators": [
+    "designedBy": [
       "JetBrains"
+    ],
+    "developer": [
+      "JetBrains",
+      "Kotlin Community"
     ],
     "designStyle": "Kotlin разработан с акцентом на лаконичность и читаемость кода. Он использует минималистичный синтаксис, благодаря чему разработчики могут писать меньше кода для достижения тех же целей. Например, с помощью лямбда-выражений, data-классов и расширений функций код становится более выразительным и коротким по сравнению с Java.",
     "fileExtensions": {
@@ -82,10 +86,10 @@
       ]
     },
     "relatedLanguages": [
-      "java",
-      "scala",
-      "groovy",
-      "swift"
+      "Java",
+      "Scala",
+      "Groovy",
+      "Swift"
     ],
     "ideSupport": [
       "IntelliJ IDEA",
@@ -94,8 +98,6 @@
       "VSCode",
       "NetBeans"
     ],
-
-
     "community": {
       "Kotlin Slack": "официальное сообщество для обмена опытом и обсуждения проблем.",
       "StackOverflow": "один из основных ресурсов для поиска ответов по проблемам с Kotlin.",
@@ -118,9 +120,12 @@
     "code": "<rkey>fn</rkey> <rfunc>main</rfunc>() {\n    <rfunc>println!</rfunc>(<rstr>\"Hello, World!\"</rstr>);\n}",
     "developmentStartYear": "2006",
     "firstVersionYear": "2015",
-    "creators": [
-      "Грейдон Хоаре",
-      "Mozilla"
+    "designedBy": [
+      "Грейдон Хоаре"
+    ],
+    "developer": [
+      "Mozilla Foundation",
+      "Rust Project Developers"
     ],
     "designStyle": "Rust спроектирован для обеспечения безопасности памяти без использования сборщика мусора. Он использует концепции заимствований и владения для управления памятью, что позволяет избежать многих распространенных ошибок программирования, связанных с памятью и многопоточностью.",
     "fileExtensions": {
@@ -178,10 +183,10 @@
       ]
     },
     "relatedLanguages": [
-      "c",
-      "c++",
-      "go",
-      "swift"
+      "C",
+      "C++",
+      "Go",
+      "Swift"
     ],
     "ideSupport": [
       "Visual Studio Code",
@@ -208,11 +213,14 @@
       "developmentStart": "Разработка C++ началась в 1979 году Бьёрном Страуструпом в Bell Labs. Он стремился добавить объектно-ориентированные возможности в язык C, сохраняя при этом его эффективность и гибкость.",
       "firstRelease": "Первая коммерческая реализация C++ появилась в 1985 году. С тех пор язык постоянно развивается, и последние стандарты, такие как C++11, C++14, C++17 и C++20, добавили множество новых возможностей."
     },
-    "code": "<rkey>#include</rkey> <rstr><iostream></rstr>\n\n<rkey>int</rkey> <rfunc>main</rfunc>() {\n    <rfunc>std</rfunc>::<rfunc>cout</rfunc> << <rstr>\"Hello, World!\"</rstr> << <rstr>'\\n'</rstr>;\n    <rkey>return</rkey> 0;\n}",
+    "code": "<rkey>#include</rkey> <rstr><iostream></rstr>\n\n<rkey>int</rkey> <rfunc>main</rfunc>() {\n    <rfunc>std</rfunc>::<rfunc>cout</rfunc> << <rstr>\"Hello, World!\"</rstr> << <rfunc>std</rfunc>::<rfunc>endl</rfunc>;\n    <rkey>return</rkey> <rnum>0</rnum>;\n}",
     "developmentStartYear": "1979",
     "firstVersionYear": "1985",
-    "creators": [
+    "designedBy": [
       "Бьёрн Страуструп"
+    ],
+    "developer": [
+      "ISO/IEC JTC1/SC22/WG21"
     ],
     "designStyle": "C++ сочетает в себе эффективность и низкоуровневый контроль, характерный для C, с возможностями высокого уровня для абстракции данных и объектно-ориентированного программирования. Он поддерживает множество парадигм и предоставляет богатый набор инструментов для разработки сложных приложений.",
     "fileExtensions": {
@@ -275,10 +283,10 @@
       ]
     },
     "relatedLanguages": [
-      "c",
-      "java",
-      "c#",
-      "rust"
+      "C",
+      "Java",
+      "C#",
+      "Rust"
     ],
     "ideSupport": [
       "Visual Studio",
@@ -305,11 +313,14 @@
       "developmentStart": "Разработка Python началась в конце 1980-х годов, а первая версия была выпущена в 1991 году. Гвидо ван Россум создал Python как наследника языка ABC, стремясь создать язык с простым синтаксисом и мощными возможностями.",
       "firstRelease": "Первая публичная версия Python 0.9.0 была выпущена в 1991 году. С тех пор язык активно развивается, и текущие версии Python 3.x продолжают расширять функциональность и производительность языка."
     },
-    "code": "<rkey>def</rkey> <rfunc>main</rfunc>():\n    <rfunc>print</rfunc>(<rstr>\"Hello, World!\"</rstr>)\n\n<rkey>if</rkey> __name__ == <rstr>'__main__'</rstr>:\n    <rfunc>main</rfunc>()",
+    "code": "<rkey>def</rkey> <rfunc>main</rfunc>():\n    <rfunc>print</rfunc>(<rstr>\"Hello, World!\"</rstr>)\n\n<rkey>if</rkey> <rstatic>__name__</rstatic> == <rstr>'__main__'</rstr>:\n    <rfunc>main</rfunc>()",
     "developmentStartYear": "1989",
     "firstVersionYear": "1991",
-    "creators": [
+    "designedBy": [
       "Гвидо ван Россум"
+    ],
+    "developer": [
+      "Python Software Foundation"
     ],
     "designStyle": "Python разработан с акцентом на читаемость и краткость кода. Он использует отступы для определения блоков кода, что способствует структурированному и понятному написанию программ. Python стремится к простоте и легкости использования, предоставляя при этом мощные библиотеки и инструменты.",
     "fileExtensions": {
@@ -373,10 +384,10 @@
       ]
     },
     "relatedLanguages": [
-      "ruby",
-      "perl",
-      "javascript",
-      "java"
+      "Ruby",
+      "Perl",
+      "JavaScript",
+      "Java"
     ],
     "ideSupport": [
       "PyCharm",
@@ -403,13 +414,16 @@
       "developmentStart": "Разработка Go началась в 2007 году сотрудниками Google Робертом Гризмером, Робом Пайком и Кеном Томпсоном. Целью было создать язык, который бы устранял сложности C++ и обеспечивал быстрый цикл разработки.",
       "firstRelease": "Первая публичная версия Go была анонсирована в ноябре 2009 года. В 2012 году был выпущен Go 1, который стал основой для дальнейшей совместимости и развития языка."
     },
-    "code": "<rkey>package</rkey> <rfunc>main</rfunc>\n\n<rkey>import</rkey> <rstr>\"fmt\"</rstr>\n\n<rkey>func</rkey> <rfunc>main</rfunc>() {\n    fmt.Println(<rstr>\"Hello, World!\"</rstr>)\n}",
+    "code": "<rkey>package</rkey> <rfunc>main</rfunc>\n\n<rkey>import</rkey> <rstr>\"fmt\"</rstr>\n\n<rkey>func</rkey> <rfunc>main</rfunc>() {\n    <rstatic>fmt</rstatic>.<rfunc>Println</rfunc>(<rstr>\"Hello, World!\"</rstr>)\n}",
     "developmentStartYear": "2007",
     "firstVersionYear": "2012",
-    "creators": [
+    "designedBy": [
       "Роберт Гризмер",
       "Роб Пайк",
       "Кен Томпсон"
+    ],
+    "developer": [
+      "Google"
     ],
     "designStyle": "Go разработан с упором на простоту и эффективность. Он имеет минималистичный синтаксис, статическую типизацию и встроенную поддержку конкурентности через горутины и каналы. Go стремится упростить процесс разработки, компиляции и деплоя приложений.",
     "fileExtensions": {
@@ -466,10 +480,10 @@
       ]
     },
     "relatedLanguages": [
-      "c",
-      "rust",
-      "java",
-      "python"
+      "C",
+      "Rust",
+      "Java",
+      "Python"
     ],
     "ideSupport": [
       "Visual Studio Code",
@@ -496,12 +510,15 @@
       "developmentStart": "Разработка Java началась в 1991 году под руководством Джеймса Гослинга. Целью было создание платформонезависимого языка для встраиваемых систем.",
       "firstRelease": "Первая версия Java 1.0 была выпущена в 1996 году. С тех пор язык постоянно развивается, и текущие версии Java продолжают добавлять новые возможности и улучшения производительности."
     },
-    "code": "<rkey>public class</rkey> <rnum>Main</rnum> {\n    <rkey>public static void</rkey> <rfunc>main</rfunc>(<rnum>String</rnum>[] args) {\n        <rstatic>System</rstatic>.<rfunc>out</rfunc>.<rfunc>println</rfunc>(<rstr>\"Hello, World!\"</rstr>);\n    }\n}",
+    "code": "<rkey>public class</rkey> <rnum>Main</rnum> {\n    <rkey>public static void</rkey> <rfunc>main</rfunc>(<rnum>String</rnum>[] args) {\n        <rstatic>System</rstatic>.<rstatic>out</rstatic>.<rfunc>println</rfunc>(<rstr>\"Hello, World!\"</rstr>);\n    }\n}",
     "developmentStartYear": "1991",
     "firstVersionYear": "1996",
-    "creators": [
-      "Джеймс Гослинг",
-      "Sun Microsystems"
+    "designedBy": [
+      "Джеймс Гослинг"
+    ],
+    "developer": [
+      "Sun Microsystems",
+      "Oracle Corporation"
     ],
     "designStyle": "Java разработан с упором на переносимость и безопасность. Он использует виртуальную машину Java (JVM) для выполнения байт-кода, что позволяет запускать программы на различных платформах без изменения кода. Язык стремится к простоте и надежности, обеспечивая автоматическое управление памятью и строгую типизацию.",
     "fileExtensions": {
@@ -562,10 +579,10 @@
       ]
     },
     "relatedLanguages": [
-      "c++",
-      "c#",
-      "kotlin",
-      "scala"
+      "C++",
+      "C#",
+      "Kotlin",
+      "Scala"
     ],
     "ideSupport": [
       "IntelliJ IDEA",
@@ -592,11 +609,13 @@
       "developmentStart": "Разработка C# началась в конце 1990-х годов под руководством Андерса Хейлсберга в Microsoft. Целью было создание языка для новой платформы .NET, который сочетал бы простоту и мощность.",
       "firstRelease": "Первая версия C# была выпущена в 2002 году вместе с .NET Framework 1.0. С тех пор язык активно развивается, добавляя новые возможности и улучшения."
     },
-    "code": "<rkey>using</rkey> System;\n\n<rkey>class</rkey> <rfunc>Program</rfunc> {\n    <rkey>static void</rkey> <rfunc>Main</rfunc>(string[] args) {\n        Console.WriteLine(<rstr>\"Hello, World!\"</rstr>);\n    }\n}",
+    "code": "<rkey>using</rkey> <rstatic>System</rstatic>;\n\n<rkey>class</rkey> <rfunc>Program</rfunc> {\n    <rkey>static void</rkey> <rfunc>Main</rfunc>(<rkey>string</rkey>[] args) {\n        <rstatic>Console</rstatic>.<rfunc>WriteLine</rfunc>(<rstr>\"Hello, World!\"</rstr>);\n    }\n}",
     "developmentStartYear": "1999",
     "firstVersionYear": "2002",
-    "creators": [
-      "Андерс Хейлсберг",
+    "designedBy": [
+      "Андерс Хейлсберг"
+    ],
+    "developer": [
       "Microsoft"
     ],
     "designStyle": "C# разработан для сочетания простоты, современности и мощных возможностей. Он поддерживает статическую типизацию, автоматическое управление памятью и современные возможности, такие как LINQ, асинхронное программирование и обобщения. Язык интегрирован с платформой .NET, что обеспечивает широкие возможности для разработки приложений.",
@@ -658,10 +677,10 @@
       ]
     },
     "relatedLanguages": [
-      "java",
-      "c++",
-      "f#",
-      "vb.net"
+      "Java",
+      "C++",
+      "F#",
+      "Visual Basic .NET"
     ],
     "ideSupport": [
       "Visual Studio",
@@ -691,8 +710,13 @@
     "code": "<rkey>console</rkey>.<rfunc>log</rfunc>(<rstr>'Hello, World!'</rstr>);",
     "developmentStartYear": "1995",
     "firstVersionYear": "1996",
-    "creators": [
+    "designedBy": [
       "Брендан Эйх"
+    ],
+    "developer": [
+      "Netscape",
+      "Mozilla Foundation",
+      "Ecma International"
     ],
     "designStyle": "JavaScript разработан как язык с динамической типизацией и поддержкой функционального, императивного и прототипно-ориентированного программирования. Он предназначен для легкого встраивания в HTML и выполнения в браузере, но теперь также широко используется вне браузера благодаря Node.js.",
     "fileExtensions": {
@@ -755,10 +779,10 @@
       ]
     },
     "relatedLanguages": [
-      "typescript",
-      "coffeescript",
-      "dart",
-      "python"
+      "TypeScript",
+      "CoffeeScript",
+      "Dart",
+      "Python"
     ],
     "ideSupport": [
       "Visual Studio Code",
@@ -785,11 +809,14 @@
       "developmentStart": "Разработка языка C началась в 1969 году в Bell Labs Деннисом Ритчи. Целью было создание языка для разработки операционной системы UNIX.",
       "firstRelease": "Язык C был официально представлен в 1972 году. В 1978 году вышла книга 'The C Programming Language' Денниса Ритчи и Брайана Кернигана, которая стала классическим руководством по языку."
     },
-    "code": "#<rkey>include</rkey> <rstr><stdio.h></rstr>\n\n<rkey>int</rkey> <rfunc>main</rfunc>() {\n    printf(<rstr>\"Hello, World!\\n\"</rstr>);\n    <rkey>return</rkey> 0;\n}",
+    "code": "<rkey>#include</rkey> <rstr><stdio.h></rstr>\n\n<rkey>int</rkey> <rfunc>main</rfunc>() {\n    <rfunc>printf</rfunc>(<rstr>\"Hello, World!\\n\"</rstr>);\n    <rkey>return</rkey> <rnum>0</rnum>;\n}",
     "developmentStartYear": "1969",
     "firstVersionYear": "1972",
-    "creators": [
+    "designedBy": [
       "Деннис Ритчи"
+    ],
+    "developer": [
+      "Bell Labs"
     ],
     "designStyle": "C разработан для системного программирования и предоставляет низкоуровневый доступ к памяти через указатели. Язык ориентирован на эффективность и минимализм, предоставляя только базовые конструкции программирования и полагаясь на библиотеки для расширенной функциональности.",
     "fileExtensions": {
@@ -848,10 +875,10 @@
       ]
     },
     "relatedLanguages": [
-      "c++",
-      "objective-c",
-      "rust",
-      "go"
+      "C++",
+      "Objective-C",
+      "Rust",
+      "Go"
     ],
     "ideSupport": [
       "Visual Studio",
@@ -881,8 +908,12 @@
     "code": "<rkey>puts</rkey> <rstr>'Hello, World!'</rstr>",
     "developmentStartYear": "1993",
     "firstVersionYear": "1995",
-    "creators": [
+    "designedBy": [
       "Юкихиро Мацумото"
+    ],
+    "developer": [
+      "Ruby Association",
+      "Community"
     ],
     "designStyle": "Ruby разработан с акцентом на продуктивность и удовольствие от программирования. Он объединяет в себе черты Perl, Smalltalk, Eiffel и других языков, предоставляя мощные возможности для метапрограммирования, динамическую типизацию и полную объектную модель.",
     "fileExtensions": {
@@ -942,10 +973,10 @@
       ]
     },
     "relatedLanguages": [
-      "perl",
-      "python",
-      "smalltalk",
-      "elixir"
+      "Perl",
+      "Python",
+      "Smalltalk",
+      "Elixir"
     ],
     "ideSupport": [
       "RubyMine",
@@ -975,8 +1006,12 @@
     "code": "<rkey><?php</rkey>\n<rfunc>echo</rfunc> <rstr>'Hello, World!'</rstr>;\n<rkey>?></rkey>",
     "developmentStartYear": "1994",
     "firstVersionYear": "1995",
-    "creators": [
+    "designedBy": [
       "Расмус Лердорф"
+    ],
+    "developer": [
+      "The PHP Development Team",
+      "Zend Technologies"
     ],
     "designStyle": "PHP разработан для простоты использования в веб-разработке. Он интегрируется с HTML и поддерживает множество баз данных. Язык имеет динамическую типизацию и предоставляет широкий набор встроенных функций для работы с веб-сервисами.",
     "fileExtensions": {
@@ -1037,10 +1072,10 @@
       ]
     },
     "relatedLanguages": [
-      "perl",
-      "python",
-      "ruby",
-      "javascript"
+      "Perl",
+      "Python",
+      "Ruby",
+      "JavaScript"
     ],
     "ideSupport": [
       "PHPStorm",
@@ -1056,6 +1091,1128 @@
       "PHP Conference": "мероприятия и конференции для разработчиков PHP."
     },
     "future": "PHP продолжает быть одним из ведущих языков для веб-разработки. С выходом новых версий, таких как PHP 8, язык получает значительные улучшения в производительности и функциональности. Ожидается, что PHP сохранит свою позицию благодаря широкому использованию и активному развитию."
+  },
+  {
+    "logo": "scala",
+    "name": "Scala",
+    "url": "https://www.scala-lang.org",
+    "description": "<bold>Scala</bold> — это современный мультипарадигменный язык программирования общего назначения, сочетающий функциональное и объектно-ориентированное программирование. Работает на платформе JVM и предназначен для создания масштабируемых приложений.",
+    "history": {
+      "nameOrigin": "Название 'Scala' происходит от слов 'scalable language', отражая его способность масштабироваться вместе с потребностями пользователей.",
+      "developmentStart": "Разработка Scala началась в 2001 году под руководством Мартина Одерски в EPFL (Швейцария).",
+      "firstRelease": "Первая версия Scala была выпущена в 2004 году, предлагая новые возможности для JVM-разработчиков."
+    },
+    "code": "<rkey>object</rkey> <rfunc>Main</rfunc> {\n  <rkey>def</rkey> <rfunc>main</rfunc>(args: <rnum>Array</rnum>[<rnum>String]</rnum>): <rnum>Unit</rnum> = {\n    <rfunc>println</rfunc>(<rstr>\"Hello, World!\"</rstr>)\n  }\n}",
+    "developmentStartYear": "2001",
+    "firstVersionYear": "2004",
+    "designedBy": [
+      "Мартин Одерски"
+    ],
+    "developer": [
+      "Сообщество Scala",
+      "EPFL"
+    ],
+    "designStyle": "Scala сочетает функциональное и объектно-ориентированное программирование, предоставляя мощные средства для абстракции и масштабирования кода.",
+    "fileExtensions": {
+      ".scala": "Основное расширение файлов исходного кода Scala.",
+      ".sc": "Используется для скриптов Scala."
+    },
+    "paradigms": {
+      "paradigms": [
+        13,
+        14,
+        6,
+        7,
+        9,
+        17,
+        8
+      ]
+    },
+    "typing": "Статическая, Сильная, Вывод типов",
+    "useCases": [
+      "Большие данные (Apache Spark)",
+      "Веб-приложения",
+      "Системы распределенных вычислений",
+      "Аналитика данных"
+    ],
+    "compatibility": [
+      "JVM",
+      "JavaScript (Scala.js)",
+      "Native platforms (Scala Native)"
+    ],
+    "popularFrameworks": [
+      "Akka",
+      "Play Framework",
+      "Apache Spark",
+      "Scalatra",
+      "Finagle"
+    ],
+    "features": [
+      "Функциональное программирование",
+      "Объектно-ориентированное программирование",
+      "Совместимость с Java",
+      "Вывод типов",
+      "Сопоставление с образцом"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Мощные возможности для абстракции",
+        "Совместимость с существующей экосистемой Java",
+        "Высокая производительность",
+        "Активное сообщество"
+      ],
+      "cons": [
+        "Крутая кривая обучения",
+        "Медленная компиляция",
+        "Меньшая экосистема по сравнению с Java"
+      ]
+    },
+    "relatedLanguages": [
+      "Java",
+      "Kotlin",
+      "Groovy",
+      "Haskell"
+    ],
+    "ideSupport": [
+      "IntelliJ IDEA",
+      "Eclipse",
+      "Visual Studio Code",
+      "Scala IDE"
+    ],
+    "community": {
+      "Scala Forums": "официальный форум для обсуждения языка.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Scala.",
+      "Reddit": "сообщество r/scala для обсуждений и новостей.",
+      "Scala Days": "ежегодная конференция для разработчиков Scala."
+    },
+    "future": "Scala продолжает развиваться с выпуском Scala 3, который приносит улучшения в синтаксис и новые функциональные возможности. Ожидается дальнейший рост в областях больших данных и распределенных систем."
+  },
+  {
+    "logo": "groovy",
+    "name": "Groovy",
+    "url": "https://groovy-lang.org",
+    "description": "<bold>Groovy</bold> — это объектно-ориентированный язык программирования для платформы JVM, который предлагает лаконичный и динамический синтаксис. Groovy совместим с Java и используется для веб-разработки, скриптов и построения проектов.",
+    "history": {
+      "nameOrigin": "Название 'Groovy' выбрано для передачи ощущения 'классного' и удобного языка.",
+      "developmentStart": "Разработка Groovy началась в 2003 году Джеймсом Страчаном и Бобом МакУиртером.",
+      "firstRelease": "Первая стабильная версия Groovy 1.0 была выпущена в январе 2007 года."
+    },
+    "code": "<rkey>println</rkey> <rstr>'Hello, World!'</rstr>",
+    "developmentStartYear": "2003",
+    "firstVersionYear": "2007",
+    "designedBy": [
+      "Джеймс Страчен",
+      "Боб МакУиртер"
+    ],
+    "developer": [
+      "Apache Software Foundation"
+    ],
+    "designStyle": "Groovy сочетает в себе простоту и гибкость динамических языков с мощью платформы Java, предоставляя разработчикам лаконичный синтаксис и мощные возможности.",
+    "fileExtensions": {
+      ".groovy": "Основное расширение файлов исходного кода Groovy.",
+      ".gvy": "Альтернативное расширение для файлов Groovy.",
+      ".gy": "Альтернативное расширение для файлов Groovy.",
+      ".gsh": "Скрипты для Groovy Shell."
+    },
+    "paradigms": {
+      "paradigms": [
+        13,
+        14,
+        6,
+        9,
+        17,
+        18,
+        8
+      ]
+    },
+    "typing": "Статическая и динамическая, Сильная",
+    "useCases": [
+      "Скрипты и автоматизация",
+      "Веб-приложения",
+      "Тестирование",
+      "Сборки проектов (Gradle)"
+    ],
+    "compatibility": [
+      "JVM",
+      "Android"
+    ],
+    "popularFrameworks": [
+      "Grails",
+      "Gradle",
+      "Spock",
+      "Ratpack",
+      "Griffon"
+    ],
+    "features": [
+      "Динамическая типизация",
+      "Лаконичный синтаксис",
+      "Совместимость с Java",
+      "Метапрограммирование",
+      "Поддержка функциональных стилей"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Быстрая разработка благодаря лаконичному синтаксису",
+        "Полная совместимость с Java",
+        "Отлично подходит для скриптов и автоматизации"
+      ],
+      "cons": [
+        "Меньшая производительность по сравнению с Java",
+        "Меньшая экосистема",
+        "Может быть сложнее отлаживать из-за динамической типизации"
+      ]
+    },
+    "relatedLanguages": [
+      "Java",
+      "Scala",
+      "Kotlin",
+      "Ruby"
+    ],
+    "ideSupport": [
+      "IntelliJ IDEA",
+      "Eclipse",
+      "NetBeans",
+      "Visual Studio Code"
+    ],
+    "community": {
+      "Groovy Mailing Lists": "официальные списки рассылки для обсуждений.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Groovy.",
+      "Reddit": "сообщество r/groovy для обсуждений и новостей.",
+      "ApacheCon": "конференция, посвященная проектам Apache, включая Groovy."
+    },
+    "future": "Groovy продолжает развиваться под эгидой Apache и остается популярным для скриптов, автоматизации и тестирования. Ожидается дальнейшая интеграция с экосистемой Java и улучшение инструментов."
+  },
+  {
+    "logo": "swift",
+    "name": "Swift",
+    "url": "https://swift.org",
+    "description": "<bold>Swift</bold> — это современный язык программирования общего назначения, разработанный компанией Apple Inc. Он предназначен для разработки приложений под iOS, macOS, watchOS и tvOS, обеспечивая высокую производительность и безопасность.",
+    "history": {
+      "nameOrigin": "Название 'Swift' означает 'быстрый', что отражает производительность и эффективность языка.",
+      "developmentStart": "Разработка Swift началась в 2010 году под руководством Криса Латтнера в Apple.",
+      "firstRelease": "Первая публичная версия Swift была представлена в 2014 году на WWDC."
+    },
+    "code": "<rkey>import</rkey> <rnum>Foundation</rnum>\n\n<rfunc>print</rfunc>(<rstr>\"Hello, World!\"</rstr>)",
+    "developmentStartYear": "2010",
+    "firstVersionYear": "2014",
+    "designedBy": [
+      "Крис Латтнер",
+      "Apple Inc."
+    ],
+    "developer": [
+      "Apple Inc.",
+      "Сообщество Swift"
+    ],
+    "designStyle": "Swift сочетает в себе лучшие идеи из различных языков, предоставляя безопасный, быстрый и современный синтаксис для разработки приложений.",
+    "fileExtensions": {
+      ".swift": "Основное расширение файлов исходного кода Swift."
+    },
+    "paradigms": {
+      "paradigms": [
+        13,
+        14,
+        6,
+        9,
+        7,
+        17,
+        8
+      ]
+    },
+    "typing": "Статическая, Сильная, Вывод типов",
+    "useCases": [
+      "Мобильные приложения (iOS)",
+      "Настольные приложения (macOS)",
+      "Приложения для watchOS и tvOS",
+      "Серверная разработка",
+      "Скрипты"
+    ],
+    "compatibility": [
+      "iOS",
+      "macOS",
+      "watchOS",
+      "tvOS",
+      "Linux"
+    ],
+    "popularFrameworks": [
+      "SwiftUI",
+      "UIKit",
+      "Combine",
+      "Vapor",
+      "Perfect"
+    ],
+    "features": [
+      "Безопасность типов",
+      "Опционалы для обработки null",
+      "Высокая производительность",
+      "Современный синтаксис",
+      "Интероперабельность с Objective-C"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Высокая производительность",
+        "Современный и понятный синтаксис",
+        "Безопасность и надежность",
+        "Поддержка Apple и открытый исходный код"
+      ],
+      "cons": [
+        "Ограниченная кроссплатформенность",
+        "Частые обновления могут вызывать проблемы совместимости",
+        "Молодая экосистема по сравнению с Objective-C"
+      ]
+    },
+    "relatedLanguages": [
+      "Objective-C",
+      "Kotlin",
+      "Rust",
+      "C#"
+    ],
+    "ideSupport": [
+      "Xcode",
+      "Visual Studio Code",
+      "AppCode",
+      "Atom"
+    ],
+    "community": {
+      "Swift Forums": "официальный форум для обсуждения языка.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Swift.",
+      "Reddit": "сообщество r/swift для обсуждений и новостей.",
+      "WWDC": "ежегодная конференция Apple, где анонсируются обновления Swift."
+    },
+    "future": "Swift продолжает активно развиваться, с улучшениями в производительности и расширением функциональности. Язык становится все более популярным для серверной разработки и, возможно, получит более широкую кроссплатформенную поддержку."
+  },
+  {
+    "logo": "perl",
+    "name": "Perl",
+    "url": "https://www.perl.org",
+    "description": "<bold>Perl</bold> — это высокоуровневый динамический язык программирования, известный своими мощными возможностями обработки текста и регулярными выражениями. Perl широко используется для веб-разработки, системного администрирования, сетевого программирования и многих других задач.",
+    "history": {
+      "nameOrigin": "Название 'Perl' изначально означало 'Practical Extraction and Report Language' (Практический язык извлечения и отчетов), хотя это скорее бэкроним. Ларри Уолл выбрал это имя, так как оно звучало приятно и не было уже занято.",
+      "developmentStart": "Первая версия Perl была разработана Ларри Уоллом в 1987 году как средство для обработки текстовых файлов и генерации отчетов.",
+      "firstRelease": "Perl 1.0 был выпущен в декабре 1987 года и быстро получил признание за свою гибкость и мощь."
+    },
+    "code": "<rkey>#!/usr/bin/perl</rkey>\n<rkey>print</rkey> <rstr>\"Hello, World!\\n\"</rstr>;",
+    "developmentStartYear": "1987",
+    "firstVersionYear": "1987",
+    "designedBy": [
+      "Ларри Уолл"
+    ],
+    "developer": [
+      "Perl Community"
+    ],
+    "designStyle": "Perl объединяет в себе черты многих языков программирования, предоставляя разработчикам гибкие инструменты для решения разнообразных задач. Он поддерживает как процедурное, так и объектно-ориентированное программирование.",
+    "fileExtensions": {
+      ".pl": "Основное расширение файлов исходного кода Perl.",
+      ".pm": "Perl-модули.",
+      ".t": "Тестовые скрипты Perl."
+    },
+    "paradigms": {
+      "paradigms": [
+        13,
+        6,
+        9,
+        14,
+        18,
+        5,
+        17,
+        8
+      ]
+    },
+    "typing": "Динамическая, Слабая",
+    "useCases": [
+      "Обработка текста и файлов",
+      "Системное администрирование",
+      "Веб-разработка (CGI)",
+      "Автоматизация",
+      "Биоинформатика"
+    ],
+    "compatibility": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Unix"
+    ],
+    "popularFrameworks": [
+      "Mojolicious",
+      "Catalyst",
+      "Dancer",
+      "DBI",
+      "PSGI/Plack"
+    ],
+    "features": [
+      "Мощные регулярные выражения",
+      "Гибкость синтаксиса",
+      "Большое количество сторонних модулей (CPAN)",
+      "Поддержка различных парадигм",
+      "Быстрое прототипирование"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Высокая производительность при обработке текста",
+        "Богатая экосистема модулей",
+        "Гибкость и выразительность языка",
+        "Кроссплатформенность"
+      ],
+      "cons": [
+        "Код может быть трудно читаемым ('линейки')",
+        "Устаревание в некоторых областях веб-разработки",
+        "Меньшая популярность среди новых разработчиков"
+      ]
+    },
+    "relatedLanguages": [
+      "Ruby",
+      "Python",
+      "PHP",
+      "Tcl"
+    ],
+    "ideSupport": [
+      "Padre",
+      "Visual Studio Code",
+      "Sublime Text",
+      "Atom",
+      "vim"
+    ],
+    "community": {
+      "Perl Mongers": "локальные группы пользователей Perl по всему миру.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Perl.",
+      "Reddit": "сообщество r/perl для обсуждений и новостей.",
+      "The Perl Conference": "ежегодная конференция для разработчиков Perl."
+    },
+    "future": "Perl продолжает использоваться в различных областях, хотя его популярность снизилась с появлением новых языков. Разработка Perl 7 направлена на модернизацию языка и возвращение интереса сообщества."
+  },
+  {
+    "logo": "fsharp",
+    "name": "F#",
+    "url": "https://fsharp.org",
+    "description": "<bold>F#</bold> — это функциональный язык программирования общего назначения с поддержкой императивного и объектно-ориентированного стилей. Он работает на платформе .NET и предназначен для решения сложных вычислительных задач с помощью лаконичного и выразительного кода.",
+    "history": {
+      "nameOrigin": "Название 'F#' следует за традицией языков семейства ML (Meta Language) и указывает на функциональную природу языка.",
+      "developmentStart": "F# был разработан Доном Саймом в Microsoft Research в начале 2000-х годов.",
+      "firstRelease": "Первая версия F# была выпущена в 2005 году как исследовательский проект, а в 2010 году он стал полноценным языком на платформе .NET."
+    },
+    "code": "<rkey>printfn</rkey> <rstr>\"Hello, World!\"</rstr>",
+    "developmentStartYear": "2005",
+    "firstVersionYear": "2010",
+    "designedBy": [
+      "Дон Сайм"
+    ],
+    "developer": [
+      "Microsoft",
+      "F# Software Foundation"
+    ],
+    "designStyle": "F# сочетает функциональное программирование с возможностями .NET, предоставляя мощные средства для обработки данных, параллелизма и асинхронного программирования.",
+    "fileExtensions": {
+      ".fs": "Основное расширение файлов исходного кода F#.",
+      ".fsx": "Скрипты F#.",
+      ".fsi": "Файлы интерфейсов F#."
+    },
+    "paradigms": {
+      "paradigms": [
+        6,
+        13,
+        14,
+        9,
+        7,
+        17,
+        8
+      ]
+    },
+    "typing": "Статическая, Сильная, Вывод типов",
+    "useCases": [
+      "Наука о данных",
+      "Финансовое моделирование",
+      "Аналитика",
+      "Разработка веб-приложений",
+      "Асинхронное программирование"
+    ],
+    "compatibility": [
+      "Windows",
+      "macOS",
+      "Linux",
+      ".NET Core",
+      ".NET Framework"
+    ],
+    "popularFrameworks": [
+      "ASP.NET Core",
+      "SAFE Stack",
+      "Akka.NET",
+      "Fable",
+      "Giraffe"
+    ],
+    "features": [
+      "Функциональное программирование",
+      "Вывод типов",
+      "Неизменяемость данных",
+      "Интеграция с .NET",
+      "Асинхронное и параллельное программирование"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Лаконичный и выразительный код",
+        "Высокая производительность",
+        "Совместимость с экосистемой .NET",
+        "Подходит для сложных вычислительных задач"
+      ],
+      "cons": [
+        "Меньшая популярность по сравнению с C#",
+        "Ограниченная поддержка инструментов",
+        "Крутая кривая обучения для разработчиков, незнакомых с функциональным программированием"
+      ]
+    },
+    "relatedLanguages": [
+      "Ocaml",
+      "Haskell",
+      "C#",
+      "Scala"
+    ],
+    "ideSupport": [
+      "Visual Studio",
+      "Visual Studio Code",
+      "Rider",
+      "MonoDevelop"
+    ],
+    "community": {
+      "F# Software Foundation": "официальная организация по продвижению F#.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по F#.",
+      "Reddit": "сообщество r/fsharp для обсуждений и новостей.",
+      "F# Conf": "мероприятия и конференции для разработчиков F#."
+    },
+    "future": "F# продолжает развиваться вместе с платформой .NET. Язык набирает популярность в областях аналитики данных и машинного обучения благодаря своей функциональной природе и совместимости с .NET."
+  },
+  {
+    "logo": "vbnet",
+    "name": "Visual Basic .NET",
+    "url": "https://docs.microsoft.com/ru-ru/dotnet/visual-basic/",
+    "description": "<bold>Visual Basic .NET</bold> — это объектно-ориентированный язык программирования от Microsoft, разработанный как преемник оригинального Visual Basic. Работает на платформе .NET и используется для разработки приложений под Windows, веб-приложений и сервисов.",
+    "history": {
+      "nameOrigin": "Название объединяет 'Visual Basic' с платформой '.NET', указывая на интеграцию с новой средой исполнения.",
+      "developmentStart": "Visual Basic .NET был разработан в конце 1990-х — начале 2000-х годов как часть стратегии Microsoft по переходу на .NET Framework.",
+      "firstRelease": "Первая версия Visual Basic .NET 7.0 была выпущена в 2002 году вместе с .NET Framework 1.0."
+    },
+    "code": "<rkey>Module</rkey> <rfunc>Program</rfunc>\n    <rkey>Sub</rkey> <rfunc>Main</rfunc>()\n        <rstatic>Console</rstatic>.<rfunc>WriteLine</rfunc>(<rstr>\"Hello, World!\"</rstr>)\n    <rkey>End Sub</rkey>\n<rkey>End Module</rkey>",
+    "developmentStartYear": "2000",
+    "firstVersionYear": "2002",
+    "designedBy": [
+      "Microsoft"
+    ],
+    "developer": [
+      "Microsoft"
+    ],
+    "designStyle": "Visual Basic .NET разработан для простоты использования и обеспечивает легкий переход для разработчиков с классического Visual Basic на платформу .NET.",
+    "fileExtensions": {
+      ".vb": "Основное расширение файлов исходного кода Visual Basic .NET."
+    },
+    "paradigms": {
+      "paradigms": [
+        14,
+        9,
+        16,
+        17,
+        13,
+        8
+      ]
+    },
+    "typing": "Статическая, Сильная, Вывод типов",
+    "useCases": [
+      "Настольные приложения под Windows",
+      "Веб-приложения (ASP.NET)",
+      "Сервисные приложения",
+      "Автоматизация Office"
+    ],
+    "compatibility": [
+      "Windows",
+      ".NET Framework",
+      ".NET Core",
+      ".NET 5+"
+    ],
+    "popularFrameworks": [
+      "ASP.NET",
+      "Windows Forms",
+      "WPF",
+      "Xamarin"
+    ],
+    "features": [
+      "Простой и понятный синтаксис",
+      "Интеграция с .NET",
+      "Поддержка объектно-ориентированного программирования",
+      "Автоматическое управление памятью",
+      "Развитая интегрированная среда разработки (Visual Studio)"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Легкость изучения для начинающих",
+        "Быстрая разработка приложений под Windows",
+        "Интеграция с экосистемой Microsoft"
+      ],
+      "cons": [
+        "Меньшая популярность по сравнению с C#",
+        "Ограниченная кроссплатформенность",
+        "Некоторые считают язык устаревшим"
+      ]
+    },
+    "relatedLanguages": [
+      "C#",
+      "F#",
+      "Delphi",
+      "Java"
+    ],
+    "ideSupport": [
+      "Visual Studio",
+      "Visual Studio Code (ограниченно)"
+    ],
+    "community": {
+      "Microsoft Developer Network": "официальные ресурсы и документация.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по VB.NET.",
+      "Reddit": "сообщество r/visualbasic для обсуждений и новостей.",
+      ".NET Conf": "мероприятия и конференции для разработчиков .NET."
+    },
+    "future": "Хотя Microsoft продолжает поддерживать Visual Basic .NET, основной фокус компании смещается в сторону C# и F#. Тем не менее, VB.NET остается актуальным для поддержки существующих приложений и разработки под Windows."
+  },
+  {
+    "logo": "typescript",
+    "name": "TypeScript",
+    "url": "https://www.typescriptlang.org",
+    "description": "<bold>TypeScript</bold> — это надмножество JavaScript с добавлением статической типизации и возможностей для разработки крупных приложений. Разработанный Microsoft, TypeScript компилируется в чистый JavaScript и может использоваться для разработки как клиентской, так и серверной части.",
+    "history": {
+      "nameOrigin": "Название 'TypeScript' отражает основной функционал языка — добавление типов ('Type') к JavaScript ('Script').",
+      "developmentStart": "TypeScript был разработан в 2010-2012 годах под руководством Андерса Хейлсберга в Microsoft.",
+      "firstRelease": "Первая версия TypeScript 0.8 была выпущена в октябре 2012 года."
+    },
+    "code": "<rkey>function</rkey> <rfunc>greet</rfunc>(name: <rnum>string</rnum>): <rnum>void</rnum> {\n    <rstatic>console</rstatic>.<func>log</func>(<rstr>`Hello, ${name}!`</rstr>);\n}\n\n<rfunc>greet</rfunc>(<rstr>'World'</rstr>);",
+    "developmentStartYear": "2012",
+    "firstVersionYear": "2012",
+    "designedBy": [
+      "Андерс Хейлсберг",
+      "Microsoft"
+    ],
+    "developer": [
+      "Microsoft"
+    ],
+    "designStyle": "TypeScript добавляет статическую типизацию и современные возможности ECMAScript, облегчая разработку и обслуживание крупных кодовых баз JavaScript.",
+    "fileExtensions": {
+      ".ts": "Основное расширение файлов исходного кода TypeScript.",
+      ".tsx": "Используется для файлов с JSX-разметкой в React."
+    },
+    "paradigms": {
+      "paradigms": [
+        14,
+        6,
+        13,
+        9,
+        17,
+        8
+      ]
+    },
+    "typing": "Статическая, Сильная",
+    "useCases": [
+      "Веб-разработка (фронтенд)",
+      "Серверная разработка (Node.js)",
+      "Мобильные приложения (React Native)",
+      "Разработка крупных проектов",
+      "SPA-приложения"
+    ],
+    "compatibility": [
+      "Браузеры (после компиляции в JS)",
+      "Node.js",
+      "Deno"
+    ],
+    "popularFrameworks": [
+      "Angular",
+      "React",
+      "Vue.js",
+      "NestJS",
+      "Express"
+    ],
+    "features": [
+      "Статическая типизация",
+      "Поддержка современных стандартов ECMAScript",
+      "Интерфейсы и обобщения",
+      "Компиляция в чистый JavaScript",
+      "Интеграция с инструментами разработки"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Улучшенная безопасность кода через типизацию",
+        "Легкость интеграции в существующие проекты на JavaScript",
+        "Поддержка со стороны Microsoft",
+        "Упрощение разработки крупных приложений"
+      ],
+      "cons": [
+        "Необходимость компиляции",
+        "Дополнительная сложность для небольших проектов",
+        "Зависимость от определения типов для сторонних библиотек"
+      ]
+    },
+    "relatedLanguages": [
+      "JavaScript",
+      "Flow",
+      "Dart",
+      "CoffeeScript"
+    ],
+    "ideSupport": [
+      "Visual Studio Code",
+      "WebStorm",
+      "Atom",
+      "Sublime Text",
+      "Visual Studio"
+    ],
+    "community": {
+      "TypeScript Community": "официальные ресурсы и обсуждения.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по TypeScript.",
+      "Reddit": "сообщество r/typescript для обсуждений и новостей.",
+      "TypeScript Conf": "мероприятия и конференции для разработчиков TypeScript."
+    },
+    "future": "TypeScript продолжает набирать популярность, особенно в крупномасштабных проектах. С постоянным обновлением и интеграцией новых возможностей JavaScript, TypeScript остается актуальным инструментом для веб-разработчиков."
+  },
+  {
+    "logo": "coffeescript",
+    "name": "CoffeeScript",
+    "url": "https://coffeescript.org",
+    "description": "<bold>CoffeeScript</bold> — это язык программирования, который компилируется в JavaScript. Он предоставляет более лаконичный и читаемый синтаксис, упрощая разработку веб-приложений.",
+    "history": {
+      "nameOrigin": "Название 'CoffeeScript' выбрано для передачи ощущения свежести и бодрости, ассоциируемых с кофе.",
+      "developmentStart": "CoffeeScript был разработан в 2009 году Джереми Эшкенасом.",
+      "firstRelease": "Первая версия была выпущена в декабре 2009 года, а стабильная версия 1.0 — в декабре 2010 года."
+    },
+    "code": "<rfunc>greet</rfunc> = (name) ->\n  <rstatic>console</rstatic>.<rfunc>log</rfunc> <rstr>`Hello, ${name}!`</rstr>\n\n<rfunc>greet</rfunc> <rstr>'World'</rstr>",
+    "developmentStartYear": "2009",
+    "firstVersionYear": "2010",
+    "designedBy": [
+      "Джереми Эшкенас"
+    ],
+    "developer": [
+      "Сообщество CoffeeScript"
+    ],
+    "designStyle": "CoffeeScript стремится улучшить JavaScript, предоставляя более краткий и выразительный синтаксис, вдохновленный языками Ruby и Python.",
+    "fileExtensions": {
+      ".coffee": "Основное расширение файлов исходного кода CoffeeScript.",
+      ".litcoffee": "Literate CoffeeScript, объединяющий код и документацию."
+    },
+    "paradigms": {
+      "paradigms": [
+        6,
+        14,
+        13,
+        9,
+        17,
+        18,
+        8
+      ]
+    },
+    "typing": "Динамическая, Уткиная типизация",
+    "useCases": [
+      "Веб-разработка",
+      "Скрипты для Node.js",
+      "Быстрое прототипирование",
+      "Обработка данных"
+    ],
+    "compatibility": [
+      "Браузеры (после компиляции)",
+      "Node.js"
+    ],
+    "popularFrameworks": [
+      "Rails (через интеграцию)",
+      "Brunch",
+      "Grunt",
+      "Gulp"
+    ],
+    "features": [
+      "Лаконичный синтаксис",
+      "Легкая компиляция в JavaScript",
+      "Синтаксический сахар для функций и классов",
+      "Поддержка современных возможностей JavaScript"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Более короткий и читаемый код",
+        "Быстрая компиляция",
+        "Совместимость с экосистемой JavaScript"
+      ],
+      "cons": [
+        "Необходимость компиляции",
+        "Меньшая популярность в настоящее время",
+        "Возможные сложности при отладке"
+      ]
+    },
+    "relatedLanguages": [
+      "JavaScript",
+      "TypeScript",
+      "Dart",
+      "Ruby"
+    ],
+    "ideSupport": [
+      "Visual Studio Code",
+      "WebStorm",
+      "Atom",
+      "Sublime Text"
+    ],
+    "community": {
+      "CoffeeScript GitHub": "официальный репозиторий и обсуждения.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по CoffeeScript.",
+      "Reddit": "сообщество r/CoffeeScript для обсуждений и новостей."
+    },
+    "future": "Популярность CoffeeScript снизилась с появлением ES6 и TypeScript, которые предоставляют многие из его возможностей. Однако язык все еще используется в некоторых проектах и поддерживается сообществом."
+  },
+  {
+    "logo": "dart",
+    "name": "Dart",
+    "url": "https://dart.dev",
+    "description": "<bold>Dart</bold> — это язык программирования от Google, предназначенный для создания веб, серверных и мобильных приложений. Dart компилируется в нативный код или JavaScript, что позволяет создавать высокопроизводительные приложения.",
+    "history": {
+      "nameOrigin": "Название 'Dart' выбрано для передачи идеи скорости и точности, как при метании дротика ('dart' по-английски).",
+      "developmentStart": "Разработка Dart началась в 2010 году в Google под руководством Ларса Бак и Каспера Лунд.",
+      "firstRelease": "Первая версия Dart была представлена в октябре 2011 года на конференции GOTO в Дании."
+    },
+    "code": "<rkey>void</rkey> <rfunc>main</rfunc>() {\n  <rfunc>print</rfunc>(<rstr>'Hello, World!'</rstr>);\n}",
+    "developmentStartYear": "2010",
+    "firstVersionYear": "2011",
+    "designedBy": [
+      "Ларс Бак",
+      "Каспер Лунд"
+    ],
+    "developer": [
+      "Google"
+    ],
+    "designStyle": "Dart разработан для разработки клиентских приложений с высокой производительностью. Он поддерживает объектно-ориентированное программирование с классами и наследованием.",
+    "fileExtensions": {
+      ".dart": "Основное расширение файлов исходного кода Dart."
+    },
+    "paradigms": {
+      "paradigms": [
+        14,
+        6,
+        13,
+        9,
+        17,
+        8
+      ]
+    },
+    "typing": "Статическая и динамическая, Сильная, Вывод типов",
+    "useCases": [
+      "Мобильные приложения (Flutter)",
+      "Веб-приложения",
+      "Серверные приложения",
+      "Командные утилиты"
+    ],
+    "compatibility": [
+      "iOS",
+      "Android",
+      "Web",
+      "Desktop (Windows, macOS, Linux)"
+    ],
+    "popularFrameworks": [
+      "Flutter",
+      "AngularDart",
+      "Aqueduct",
+      "Dart Frog",
+      "GetX"
+    ],
+    "features": [
+      "Кроссплатформенность",
+      "Высокая производительность",
+      "Асинхронное программирование",
+      "Поддержка JIT и AOT компиляции",
+      "Современный синтаксис"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Единый язык для фронтенда и мобильной разработки",
+        "Интеграция с Flutter",
+        "Быстрая разработка и горячая перезагрузка"
+      ],
+      "cons": [
+        "Меньшая популярность вне экосистемы Flutter",
+        "Ограниченная экосистема по сравнению с JavaScript",
+        "Необходимость изучения нового языка для разработчиков"
+      ]
+    },
+    "relatedLanguages": [
+      "JavaScript",
+      "TypeScript",
+      "Kotlin",
+      "Swift"
+    ],
+    "ideSupport": [
+      "Visual Studio Code",
+      "Android Studio",
+      "IntelliJ IDEA"
+    ],
+    "community": {
+      "Dart Community": "официальные ресурсы и обсуждения.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Dart.",
+      "Reddit": "сообщество r/dartlang для обсуждений и новостей.",
+      "Dart Conf": "мероприятия и конференции для разработчиков Dart."
+    },
+    "future": "С развитием Flutter, Dart получает все большее распространение в мобильной разработке. Ожидается дальнейшее улучшение производительности и расширение экосистемы."
+  },
+  {
+    "logo": "objective-c",
+    "name": "Objective-C",
+    "url": "https://developer.apple.com/documentation/objectivec",
+    "description": "<bold>Objective-C</bold> — это объектно-ориентированный язык программирования, являющийся расширением языка C, с добавлением сообщений из Smalltalk. Он долгое время был основным языком для разработки приложений под macOS и iOS.",
+    "history": {
+      "nameOrigin": "Название 'Objective-C' указывает на добавление объектно-ориентированных возможностей к языку C.",
+      "developmentStart": "Objective-C был разработан в начале 1980-х годов Брэдом Коксом и Томом Лавом в компании Stepstone.",
+      "firstRelease": "Первая реализация Objective-C была выпущена в начале 1980-х годов, а в конце 1980-х язык был лицензирован NeXT (компания Стива Джобса)."
+    },
+    "code": "<rkey>#import</rkey> <rstr><Foundation/Foundation.h></rstr>\n\n<rkey>int</rkey> <rfunc>main</rfunc>(<rkey>int</rkey> argc, <rkey>const char</rkey> * argv[]) {\n    <rstatic>@autoreleasepool</rstatic> {\n        <rfunc>NSLog</rfunc>(<rstr>@\"Hello, World!\"</rstr>);\n    }\n    <rkey>return</rkey> <rnum>0</rnum>;\n}",
+    "developmentStartYear": "1984",
+    "firstVersionYear": "1984",
+    "designedBy": [
+      "Брэд Кокс",
+      "Том Лав"
+    ],
+    "developer": [
+      "Apple Inc."
+    ],
+    "designStyle": "Objective-C сочетает в себе синтаксис и возможности C с объектно-ориентированными концепциями из Smalltalk, предоставляя гибкие возможности для разработки.",
+    "fileExtensions": {
+      ".m": "Основное расширение файлов исходного кода Objective-C.",
+      ".h": "Заголовочные файлы.",
+      ".mm": "Файлы Objective-C++, содержащие код на C++."
+    },
+    "paradigms": {
+      "paradigms": [
+        14,
+        9,
+        13,
+        17,
+        8
+      ]
+    },
+    "typing": "Статическая и динамическая, Сильная",
+    "useCases": [
+      "Мобильные приложения (iOS)",
+      "Настольные приложения (macOS)",
+      "Разработка фреймворков",
+      "Системное программирование на платформах Apple"
+    ],
+    "compatibility": [
+      "iOS",
+      "macOS",
+      "watchOS",
+      "tvOS"
+    ],
+    "popularFrameworks": [
+      "Cocoa",
+      "Cocoa Touch",
+      "Foundation",
+      "UIKit",
+      "AFNetworking"
+    ],
+    "features": [
+      "Объектно-ориентированное программирование",
+      "Динамическая отправка сообщений",
+      "Интероперабельность с C и C++",
+      "Категории и протоколы",
+      "Использование Runtime"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Глубокая интеграция с платформами Apple",
+        "Высокая производительность",
+        "Мощные возможности через Runtime"
+      ],
+      "cons": [
+        "Более сложный и вербозный синтаксис",
+        "Меньшая популярность с появлением Swift",
+        "Крутая кривая обучения для новых разработчиков"
+      ]
+    },
+    "relatedLanguages": [
+      "C",
+      "C++",
+      "Swift",
+      "Smalltalk"
+    ],
+    "ideSupport": [
+      "Xcode"
+    ],
+    "community": {
+      "Apple Developer": "официальные ресурсы и документация.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Objective-C.",
+      "Reddit": "сообщество r/ObjectiveC для обсуждений и новостей.",
+      "WWDC": "конференция, где обсуждаются технологии Apple, включая Objective-C."
+    },
+    "future": "С появлением Swift, Objective-C постепенно отходит на второй план, но остается важным для поддержки существующих приложений и фреймворков. Apple продолжает поддерживать язык, но основной фокус смещается в сторону Swift."
+  },
+  {
+    "logo": "smalltalk",
+    "name": "Smalltalk",
+    "url": "http://www.smalltalk.org",
+    "description": "<bold>Smalltalk</bold> — это объектно-ориентированный, динамический язык программирования, известный своим простым синтаксисом и влиянием на развитие ООП. Smalltalk считается одним из первых полностью объектно-ориентированных языков и повлиял на многие современные языки.",
+    "history": {
+      "nameOrigin": "Название 'Smalltalk' было выбрано, чтобы подчеркнуть простоту и легкость общения с компьютером через этот язык.",
+      "developmentStart": "Smalltalk был разработан в 1970-х годах Аланом Кеем, Дэном Ингаллсом и Адель Голдберг в Xerox PARC.",
+      "firstRelease": "Первая версия, Smalltalk-72, была выпущена в 1972 году, а наиболее известная версия, Smalltalk-80, — в 1980 году."
+    },
+    "code": "<rfunc>'Hello, World!'</rfunc> <rkey>displayNl</rkey>",
+    "developmentStartYear": "1972",
+    "firstVersionYear": "1972",
+    "designedBy": [
+      "Алан Кей",
+      "Дэн Ингаллс",
+      "Адель Голдберг"
+    ],
+    "developer": [
+      "Сообщество Smalltalk"
+    ],
+    "designStyle": "Smalltalk основан на концепции, что все является объектом. Язык предоставляет простой синтаксис и мощные средства для метапрограммирования.",
+    "fileExtensions": {
+      ".st": "Основное расширение файлов исходного кода Smalltalk."
+    },
+    "paradigms": {
+      "paradigms": [
+        14,
+        13,
+        17,
+        18,
+        8
+      ]
+    },
+    "typing": "Динамическая, Сильная",
+    "useCases": [
+      "Образование",
+      "Прототипирование",
+      "Разработка графических интерфейсов",
+      "Исследовательские проекты"
+    ],
+    "compatibility": [
+      "Кроссплатформенный (зависит от реализации)"
+    ],
+    "popularFrameworks": [
+      "Seaside",
+      "Pharo",
+      "Squeak",
+      "VisualWorks"
+    ],
+    "features": [
+      "Полное объектно-ориентированное программирование",
+      "Простой и консистентный синтаксис",
+      "Интегрированная среда разработки",
+      "Метапрограммирование",
+      "Графические интерфейсы"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Чистота объектно-ориентированной модели",
+        "Простота и консистентность языка",
+        "Мощные возможности для метапрограммирования"
+      ],
+      "cons": [
+        "Меньшая популярность в настоящее время",
+        "Ограниченная экосистема",
+        "Может быть непривычен для разработчиков современных языков"
+      ]
+    },
+    "relatedLanguages": [
+      "Ruby",
+      "Objective-C",
+      "Python",
+      "Elixir"
+    ],
+    "ideSupport": [
+      "Pharo",
+      "Squeak",
+      "VisualWorks",
+      "Dolphin Smalltalk"
+    ],
+    "community": {
+      "Smalltalk.org": "официальные ресурсы и документация.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Smalltalk.",
+      "Reddit": "сообщество r/Smalltalk для обсуждений и новостей.",
+      "Smalltalk Events": "мероприятия и конференции для разработчиков Smalltalk."
+    },
+    "future": "Smalltalk продолжает использоваться в нишевых областях и образовательных целях. Его идеи продолжают влиять на разработку новых языков и парадигм программирования."
+  },
+  {
+    "logo": "elixir",
+    "name": "Elixir",
+    "url": "https://elixir-lang.org",
+    "description": "<bold>Elixir</bold> — это функциональный, конкурентный язык программирования, работающий на виртуальной машине Erlang (BEAM). Он предназначен для создания масштабируемых и поддерживаемых приложений с высокой доступностью.",
+    "history": {
+      "nameOrigin": "Название 'Elixir' выбрано для передачи идеи средства, способного решать сложные задачи в программировании.",
+      "developmentStart": "Elixir был создан в 2011 году Хосе Валимом, бывшим участником команды Ruby on Rails.",
+      "firstRelease": "Первая стабильная версия Elixir 1.0 была выпущена в сентябре 2014 года."
+    },
+    "code": "<rfunc>IO.puts</rfunc> <rstr>'Hello, World!'</rstr>",
+    "developmentStartYear": "2011",
+    "firstVersionYear": "2014",
+    "designedBy": [
+      "Хосе Валим"
+    ],
+    "developer": [
+      "Сообщество Elixir"
+    ],
+    "designStyle": "Elixir сочетает в себе синтаксис, похожий на Ruby, с мощью и производительностью Erlang, предоставляя инструменты для создания распределенных и отказоустойчивых систем.",
+    "fileExtensions": {
+      ".ex": "Основное расширение файлов исходного кода Elixir.",
+      ".exs": "Скрипты Elixir."
+    },
+    "paradigms": {
+      "paradigms": [
+        6,
+        13,
+        15,
+        17,
+        8
+      ]
+    },
+    "typing": "Динамическая, Сильная",
+    "useCases": [
+      "Веб-разработка",
+      "Реалтайм приложения",
+      "Масштабируемые системы",
+      "Микросервисы",
+      "Чат-приложения"
+    ],
+    "compatibility": [
+      "Кроссплатформенный (через Erlang VM)"
+    ],
+    "popularFrameworks": [
+      "Phoenix",
+      "Nerves",
+      "Absinthe",
+      "Ecto",
+      "Plug"
+    ],
+    "features": [
+      "Функциональное программирование",
+      "Масштабируемость и конкурентность",
+      "Отказоустойчивость",
+      "Метапрограммирование через макросы",
+      "Интерактивная оболочка (IEx)"
+    ],
+    "prosAndCons": {
+      "pros": [
+        "Высокая производительность в конкурентных задачах",
+        "Отличная масштабируемость",
+        "Современный и понятный синтаксис",
+        "Активное и дружелюбное сообщество"
+      ],
+      "cons": [
+        "Крутая кривая обучения для новичков",
+        "Меньшая экосистема по сравнению с более популярными языками",
+        "Зависимость от виртуальной машины Erlang"
+      ]
+    },
+    "relatedLanguages": [
+      "Erlang",
+      "Ruby",
+      "Haskell",
+      "Clojure"
+    ],
+    "ideSupport": [
+      "Visual Studio Code",
+      "IntelliJ IDEA (с плагинами)",
+      "Atom",
+      "vim"
+    ],
+    "community": {
+      "Elixir Forum": "официальный форум для обсуждения языка.",
+      "StackOverflow": "ключевой ресурс для вопросов и ответов по Elixir.",
+      "Reddit": "сообщество r/elixir для обсуждений и новостей.",
+      "ElixirConf": "ежегодная конференция для разработчиков Elixir."
+    },
+    "future": "Elixir продолжает расти в популярности, особенно в областях, требующих высокой производительности и масштабируемости. С развитием экосистемы и инструментов ожидается дальнейшее распространение языка."
   }
-
 ]

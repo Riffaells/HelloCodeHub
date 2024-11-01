@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <plurals name="years">
+        <item quantity="zero">год</item>
+        <item quantity="one">год</item>
+        <item quantity="few">года</item>
+        <item quantity="many">лет</item>
+        <item quantity="other">лет</item>
+    </plurals>
+
+    <plurals name="designedBy">
+        <item quantity="zero">Разработано</item>
+        <item quantity="one">Разработано</item>
+        <item quantity="few">Разработано</item>
+        <item quantity="many">Разработали</item>
+        <item quantity="other">Разработали</item>
+    </plurals>
+
+    <plurals name="developer">
+        <item quantity="zero">Разрабатывается</item>
+        <item quantity="one">Разрабатывает</item>
+        <item quantity="few">Разрабатываются</item>
+        <item quantity="many">Разрабатываются</item>
+        <item quantity="other">Разрабатываются</item>
+    </plurals>
+
+
+    <plurals name="paradigms">
+        <item quantity="zero">Парадигма</item>
+        <item quantity="one">Парадигма</item>
+        <item quantity="few">Парадигмы</item>
+        <item quantity="many">Парадигм</item>
+        <item quantity="other">Парадигм</item>
+    </plurals>
+</resources>
