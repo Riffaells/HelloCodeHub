@@ -46,6 +46,13 @@ fun MainContent(
                             component.onLangDetailedClicked(lang)
                         }
                     )
+//
+//                    LangCodeCard(
+//                        lang = lang,
+//                        onClick = {
+//                            component.onLangDetailedClicked(lang)
+//                        }
+//                    )
                 }
             }
         } else {

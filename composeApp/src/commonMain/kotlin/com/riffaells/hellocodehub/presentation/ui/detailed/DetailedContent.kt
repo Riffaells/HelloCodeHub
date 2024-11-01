@@ -3,16 +3,16 @@ package com.riffaells.hellocodehub.presentation.ui.detailed
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.riffaells.hellocodehub.domain.components.detailed.DetailedComponent
@@ -26,8 +26,8 @@ import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContent
 import hellocodehub.composeapp.generated.resources.Res
 import hellocodehub.composeapp.generated.resources.detailed_tabs
 import kotlinx.coroutines.launch
-import org.jetbrains.compose.resources.imageResource
 import org.jetbrains.compose.resources.stringArrayResource
+import kotlin.math.min
 
 
 @Composable
@@ -38,6 +38,11 @@ fun DetailedContent(
     val state by component.state.collectAsState()
     val lang = component.lang
 
+
+    val scrollState = rememberLazyListState()
+    val maxOffset = with(LocalDensity.current) { 200.dp.toPx() }
+    val scrollOffset = min(scrollState.firstVisibleItemScrollOffset.toFloat(), maxOffset)
+    val collapseFraction = (scrollOffset / maxOffset).coerceIn(0f, 1f)
 
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -84,8 +89,9 @@ fun DetailedContent(
                 onBack = {
                     component.onBackClicked()
                 },
-                isRowLayout = false,
+                collapseFraction = collapseFraction,
             )
+
 
             Surface(
                 modifier = Modifier
@@ -141,43 +147,44 @@ fun DetailedContent(
                             .fillMaxWidth()
                     ) { index ->
 
-                        val mod =
 
-                            LazyColumn(
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .padding(10.dp)
-                            ) {
-                                item {
-                                    when (index) {
-                                        0 -> TabContentDescription(lang)
-                                        1 ->
-                                            TabContentFeatures(
-                                                lang = lang,
-                                                onLang = { lang ->
-                                                    val l = stateRoot.languages.firstOrNull { it.name == lang }
-                                                    l?.let {
-                                                        component.onLangDetailedClicked(it)
-                                                    } ?: scope.launch {
-                                                        val result = snackbarHostState.showSnackbar(
-                                                            "Такого языка еще нету",
-                                                            duration = SnackbarDuration.Short
-                                                        )
-                                                        when (result) {
-                                                            SnackbarResult.ActionPerformed -> {}
-                                                            SnackbarResult.Dismissed -> {
-                                                                snackbarHostState.showSnackbar("Действие отменено")
-                                                            }
+                        LazyColumn(
+
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(10.dp),
+                            state = scrollState
+                        ) {
+                            item {
+                                when (index) {
+                                    0 -> TabContentDescription(lang)
+                                    1 ->
+                                        TabContentFeatures(
+                                            lang = lang,
+                                            onLang = { lang ->
+                                                val l = stateRoot.languages.firstOrNull { it.name == lang }
+                                                l?.let {
+                                                    component.onLangDetailedClicked(it)
+                                                } ?: scope.launch {
+                                                    val result = snackbarHostState.showSnackbar(
+                                                        "Такого языка еще нету",
+                                                        duration = SnackbarDuration.Short
+                                                    )
+                                                    when (result) {
+                                                        SnackbarResult.ActionPerformed -> {}
+                                                        SnackbarResult.Dismissed -> {
+                                                            snackbarHostState.showSnackbar("Действие отменено")
                                                         }
                                                     }
                                                 }
-                                            )
+                                            }
+                                        )
 
 
-                                        2 -> TabContentProsCons(lang)
-                                    }
+                                    2 -> TabContentProsCons(lang)
                                 }
                             }
+                        }
                     }
                 }
 

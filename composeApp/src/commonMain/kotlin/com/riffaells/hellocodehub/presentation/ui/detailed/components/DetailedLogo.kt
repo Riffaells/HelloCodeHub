@@ -1,24 +1,25 @@
 package com.riffaells.hellocodehub.presentation.ui.detailed.components
 
+import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.drawWithCache
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.Matrix
-import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.*
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.lerp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.util.lerp
 import androidx.compose.ui.zIndex
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
 import com.riffaells.hellocodehub.presentation.theme.RIcons
@@ -33,102 +34,110 @@ import org.jetbrains.compose.resources.pluralStringResource
 import org.jetbrains.compose.resources.stringArrayResource
 import org.jetbrains.compose.resources.stringResource
 
+@OptIn(ExperimentalAnimationApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun DetailedLogo(
     modifier: Modifier = Modifier,
     lang: ProgrammingLanguage,
     onBack: () -> Unit,
-    isRowLayout: Boolean
-
+    collapseFraction: Float
 ) {
+    // Задаем максимальную и минимальную высоту области
+    val maxHeight = 200.dp
+    val minHeight = 70.dp // Минимальная высота в свернутом состоянии
+    val animatedHeight by animateDpAsState(targetValue = lerp(maxHeight, minHeight, collapseFraction))
 
-    Box {
-        IconButton(
+    // Анимированные размеры
+    val logoSize by animateDpAsState(targetValue = lerp(120.dp, 40.dp, collapseFraction))
+    val nameFontSize by animateSpAsState(targetValue = lerp(28.sp, 18.sp, collapseFraction))
+    val paradigmFontSize by animateSpAsState(targetValue = lerp(20.sp, 14.sp, collapseFraction))
+    val backButtonSize by animateDpAsState(targetValue = lerp(48.dp, 40.dp, collapseFraction))
+    val yearsFontSize by animateSpAsState(targetValue = lerp(16.sp, 12.sp, collapseFraction))
+
+    // Отступы для анимации позиций
+    val contentPaddingHorizontal by animateDpAsState(targetValue = lerp(16.dp, 8.dp, collapseFraction))
+
+    Box(
+        modifier = modifier
+            .sizeIn(maxWidth = 1000.dp, minHeight = minHeight)
+            .height(animatedHeight)
+            .fillMaxWidth()
+    ) {
+        // Основной контент
+        Row(
             modifier = Modifier
-                .padding(start = 4.dp),
-            onClick = { onBack() },
-            colors = IconButtonDefaults.iconButtonColors(
-
-            )
+                .fillMaxSize()
+                .padding(horizontal = contentPaddingHorizontal),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Image(
-                RIcons.ArrowBack,
-                contentDescription = null,
-                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
-            )
-        }
+            // Кнопка "Назад"
+            IconButton(
 
-
-        val years =
-            Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).year - lang.developmentStartYear
-        YearsContent(
-            modifier = Modifier
-                .align(Alignment.BottomEnd)
-                .padding(bottom = 16.dp, end = 16.dp),
-            years = years,
-            text = pluralStringResource(Res.plurals.years, years)
-        )
-
-
-        if (isRowLayout) {
-            Row(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(12.dp, 30.dp)
-                    .zIndex(1f)
-                    .align(Alignment.Center),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
+                onClick = { onBack() },
+                modifier = Modifier
+                    .size(backButtonSize)
+                    .align(Alignment.Top)
+                    .padding(10.dp)
             ) {
-                Image(
-                    modifier = Modifier
-                        .sizeIn(maxHeight = 60.dp, minHeight = 60.dp), // Уменьшение размера логотипа в Row
-                    painter = painterResource(lang.getLogo()),
-                    contentDescription = lang.name
+                Icon(
+                    imageVector = RIcons.ArrowBack,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary
                 )
-                Spacer(modifier = Modifier.width(8.dp))
-                Column {
-                    Text(
-                        text = lang.name,
-                        style = MaterialTheme.typography.displayMedium,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Text(
-                        text = stringArrayResource(Res.array.paradigms)[0],
-                        style = MaterialTheme.typography.headlineSmall,
-                    )
-                }
             }
-        } else {
+
+            // Логотип
+            Image(
+                painter = painterResource(lang.getLogo()),
+                contentDescription = lang.name,
+                modifier = Modifier
+                    .size(logoSize)
+            )
+
+            // Название и парадигма
             Column(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(12.dp, 30.dp)
-                    .zIndex(1f)
-                    .align(Alignment.Center),
-                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .padding(start = 8.dp),
+                verticalArrangement = Arrangement.Center
             ) {
-                Image(
-                    modifier = Modifier
-                        .sizeIn(maxHeight = 120.dp, minHeight = 120.dp), // Размер логотипа для Column
-                    painter = painterResource(lang.getLogo()),
-                    contentDescription = lang.name
-                )
                 Text(
                     text = lang.name,
-                    style = MaterialTheme.typography.displayMedium,
+//                    style = MaterialTheme.typography.displayMedium,
                     fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.primary,
+                    fontSize = nameFontSize,
+                    maxLines = 1
                 )
                 Text(
                     text = lang.paradigms.getStringParadigms(stringArrayResource(Res.array.paradigms))[0],
-                    style = MaterialTheme.typography.headlineSmall,
+//                    style = MaterialTheme.typography.headlineSmall,
+                    fontSize = paradigmFontSize,
+                    maxLines = 1
                 )
             }
-        }
 
+            Spacer(modifier = Modifier.weight(1f))
+
+            val years =
+                Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).year - lang.developmentStartYear
+            YearsContent(
+                modifier = Modifier,
+                years = years,
+                text = pluralStringResource(Res.plurals.years, years),
+                fontSize = yearsFontSize
+            )
+        }
     }
+}
+
+
+@Composable
+fun animateSpAsState(
+    targetValue: TextUnit,
+    animationSpec: AnimationSpec<Float> = tween()
+): State<TextUnit> {
+    val animatedValue = animateFloatAsState(targetValue.value, animationSpec)
+    return derivedStateOf { animatedValue.value.sp }
 }
 
 
@@ -137,6 +146,7 @@ fun YearsContent(
     modifier: Modifier = Modifier,
     years: Int,
     text: String,
+    fontSize: TextUnit
 ) {
 
 
@@ -146,7 +156,7 @@ fun YearsContent(
             .background(
                 Brush.linearGradient(
                     listOf(color, color)
-                ), CircleShape, alpha = 0.8f
+                ), CircleShape, alpha = 0.6f
             )
             .circleLayout(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -158,7 +168,8 @@ fun YearsContent(
             text = years.toString(),
             style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onPrimary
+            color = MaterialTheme.colorScheme.onPrimary,
+//            fontSize = fontSize
         )
 
         Text(

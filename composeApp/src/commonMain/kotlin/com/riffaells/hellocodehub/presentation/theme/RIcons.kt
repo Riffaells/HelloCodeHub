@@ -24,6 +24,8 @@ object RIcons {
     val Visibility = Icons.Rounded.Visibility
     val VisibilityOff = Icons.Rounded.VisibilityOff
 
+    val Copy = Icons.Rounded.ContentCopy
+
     val Bolt = Icons.Rounded.Bolt
     val Crown = Icons.Rounded.Diamond
     val ArrowBack = Icons.AutoMirrored.Rounded.ArrowBack

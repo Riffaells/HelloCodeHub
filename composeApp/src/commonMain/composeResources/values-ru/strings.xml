@@ -15,24 +15,24 @@
     <string name="hello_world">Привет, мир</string>
 
     <string-array name="paradigms">
-        <item>Ассемблерная</item>
-        <item>Блочно-структурированная</item>
-        <item>Кросс-платформенная</item>
-        <item>Ориентированная на данные</item>
-        <item>Декларативная</item>
-        <item>Функциональная</item>
-        <item>Обобщенная</item>
-        <item>Высокоуровневая</item>
-        <item>Императивная</item>
-        <item>Логическая</item>
-        <item>Низкоуровневая</item>
-        <item>Разметка</item>
-        <item>Многопарадигменная</item>
-        <item>Объектно-ориентированная</item>
-        <item>Параллельная</item>
-        <item>Процедурная</item>
-        <item>Рефлексивная</item>
-        <item>Скриптовая</item>
+        <item>Ассемблерный</item>
+        <item>Блочно-структурированный</item>
+        <item>Кросс-платформенный</item>
+        <item>Ориентированный на данные</item>
+        <item>Декларативный</item>
+        <item>Функциональный</item>
+        <item>Обобщенный</item>
+        <item>Высокоуровневый</item>
+        <item>Императивный</item>
+        <item>Логический</item>
+        <item>Низкоуровневый</item>
+        <item>Разметочный</item>
+        <item>Многопарадигменный</item>
+        <item>Объектно-ориентированный</item>
+        <item>Параллельный</item>
+        <item>Процедурный</item>
+        <item>Рефлексивный</item>
+        <item>Скриптовый</item>
     </string-array>
 
     <string-array name="paradigm_descriptions">

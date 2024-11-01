@@ -40,31 +40,37 @@ data class ProgrammingLanguage(
 ) {
 
     fun getLogo() = when (logo) {
+        "c" -> Res.drawable.c
+        "clojure" -> Res.drawable.clojure
+        "coffeescript" -> Res.drawable.coffeescript
         "cpp" -> Res.drawable.cpp
-        "golang" -> Res.drawable.golang
-        "kotlin" -> Res.drawable.kotlin
-        "python" -> Res.drawable.python
-        "rust" -> Res.drawable.rust
-
         "csharp" -> Res.drawable.csharp
+        "dart" -> Res.drawable.dart
+        "delphi" -> Res.drawable.delphi
+        "elixir" -> Res.drawable.elixir
+        "erlang" -> Res.drawable.erlang
+        "flow" -> Res.drawable.flow
+        "fsharp" -> Res.drawable.fsharp
+        "golang" -> Res.drawable.golang
+        "groovy" -> Res.drawable.groovy
+        "haskell" -> Res.drawable.haskell
         "java" -> Res.drawable.java
         "javascript" -> Res.drawable.javascript
-        "php" -> Res.drawable.php
-        "ruby" -> Res.drawable.ruby
-        "c" -> Res.drawable.c
-
-        "coffeescript" -> Res.drawable.coffeescript
-        "dart" -> Res.drawable.dart
-        "elixir" -> Res.drawable.elixir
-        "fsharp" -> Res.drawable.fsharp
-        "groovy" -> Res.drawable.groovy
+        "kotlin" -> Res.drawable.kotlin
         "objective-c" -> Res.drawable.objective_c
+        "ocaml" -> Res.drawable.ocaml
         "perl" -> Res.drawable.perl
+        "php" -> Res.drawable.php
+        "python" -> Res.drawable.python
+        "ruby" -> Res.drawable.ruby
+        "rust" -> Res.drawable.rust
         "scala" -> Res.drawable.scala
         "smalltalk" -> Res.drawable.smalltalk
         "swift" -> Res.drawable.swift
+        "tcl" -> Res.drawable.tcl
         "typescript" -> Res.drawable.typescript
         "vbnet" -> Res.drawable.vbnet
+
         else -> Res.drawable.kotlin
     }
 
@@ -82,7 +88,7 @@ data class ProgrammingLanguage(
         "ruby" -> listOf("#A21F0E", "#CB2D1B", "#E4513C").toColors()
         "rust" -> listOf("#8C1C1B", "#E43414", "#E33414", "#D6361C").toColors()
 
-        "coffeescript" -> listOf("#CFD0D7","#283048", "#30344C").toColors()
+        "coffeescript" -> listOf("#2f2625", "#2f2625", "#30344C").toColors()
         "dart" -> listOf("#045B93", "#1384BE", "#04BAF7", "#43C4F4").toColors()
         "elixir" -> listOf("#39194F", "#654A73", "#90759F", "#A58EBC", "#B4A3BA").toColors()
         "fsharp" -> listOf("#248BB4", "#2890C4", "#2890C4", "#04B4D4").toColors()
@@ -94,6 +100,15 @@ data class ProgrammingLanguage(
         "swift" -> listOf("#ED4028", "#EF6C3D", "#F48767", "#F9A14B", "#F8C098").toColors()
         "typescript" -> listOf("#2474C4", "#3684C4", "#0668B7", "#8BB4DC").toColors()
         "vbnet" -> listOf("#04588C", "#3C7CA4", "#7CACC4", "#2E74A4").toColors()
+
+
+        "clojure" -> listOf("#73D44B", "#42A333", "#76B865", "#4D80D6", "#1E52BC", "#83A2DE").toColors()
+        "delphi" -> listOf("#9E1C16", "#D0221B", "#F15646", "#F18C81").toColors()
+        "erlang" -> listOf("#A3143B", "#B42854", "#BC3C63", "#C7607F").toColors()
+        "flow" -> listOf("#FC8B24", "#FC992D", "#FCB436", "#FCC43C", "#FCD05E", "#FCDC5F").toColors()
+        "haskell" -> listOf("#915087","#473C60", "#5F5182").toColors()
+        "ocaml" -> listOf("#F45F1C","#F47F25",  "#FA9449", "#FCA454").toColors()
+        "tcl" -> listOf("#095CAC", "#249CEC", "#FB4B33", "#F42C14","#FCEB3E").toColors()
 
         else -> listOf(Color.Red, Color.Blue)
     }

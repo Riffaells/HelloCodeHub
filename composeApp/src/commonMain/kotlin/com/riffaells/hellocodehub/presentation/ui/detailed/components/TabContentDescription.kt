@@ -1,6 +1,7 @@
 package com.riffaells.hellocodehub.presentation.ui.detailed.components
 
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -10,7 +11,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -34,48 +37,36 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
 
         )
 
-
     TitleText(
-        title = "${stringResource(Res.string.hello_world)} ${lang.name}",
+        title = stringResource(Res.string.name_origin),
+        style = MaterialTheme.typography.headlineSmall,
 
         ) {
-        Column(
-            modifier = Modifier.padding(4.dp)
-        ) {
-            TitleText(
-                title = stringResource(Res.string.name_origin),
-                style = MaterialTheme.typography.headlineSmall,
-
-                ) {
-                Text(
-                    modifier = Modifier.padding(4.dp),
-                    text = lang.history.nameOrigin
-                )
-            }
-
-            TitleText(
-                title = stringResource(Res.string.development_start),
-                style = MaterialTheme.typography.headlineSmall,
-            ) {
-                Text(
-                    modifier = Modifier.padding(4.dp),
-                    text = lang.history.developmentStart
-                )
-            }
-
-            TitleText(
-                title = stringResource(Res.string.first_release),
-                style = MaterialTheme.typography.headlineSmall,
-            ) {
-                Text(
-                    modifier = Modifier.padding(4.dp),
-                    text = lang.history.firstRelease
-                )
-            }
-        }
+        Text(
+            modifier = Modifier.padding(4.dp),
+            text = lang.history.nameOrigin
+        )
     }
 
+    TitleText(
+        title = stringResource(Res.string.development_start),
+        style = MaterialTheme.typography.headlineSmall,
+    ) {
+        Text(
+            modifier = Modifier.padding(4.dp),
+            text = lang.history.developmentStart
+        )
+    }
 
+    TitleText(
+        title = stringResource(Res.string.first_release),
+        style = MaterialTheme.typography.headlineSmall,
+    ) {
+        Text(
+            modifier = Modifier.padding(4.dp),
+            text = lang.history.firstRelease
+        )
+    }
 
     TitleText(
         title = "${stringResource(Res.string.hello_world)} ${lang.name}",
@@ -84,7 +75,6 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
 
         HighlightedCode(text = lang.code)
     }
-
 
 
 }
@@ -177,19 +167,30 @@ fun HighlightedCode(
             containerColor = codeColor.background,
         )
     ) {
-        SelectionContainer(
-            modifier = Modifier
-                .horizontalScroll(rememberScrollState()),
-        ) {
-            Text(
+        Box {
+            IconButton(
+                modifier = Modifier.padding(4.dp).align(Alignment.TopEnd).alpha(0.7f),
+                onClick = {}
+            ) {
+                Icon(
+                    imageVector = RIcons.Copy,
+                    contentDescription = null
+                )
+            }
+            SelectionContainer(
                 modifier = Modifier
-                    .padding(16.dp),
-                text = annotatedString,
-                style = MaterialTheme.typography.titleMedium,
+                    .padding(16.dp, 20.dp)
+                    .horizontalScroll(rememberScrollState()),
+            ) {
+                Text(
+                    modifier = Modifier,
+                    text = annotatedString,
+                    style = MaterialTheme.typography.titleMedium,
 
-                fontFamily = FontFamily(Font(font))
+                    fontFamily = FontFamily(Font(font))
 
-            )
+                )
+            }
         }
     }
 
