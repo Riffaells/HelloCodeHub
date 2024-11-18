@@ -10,6 +10,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.*
@@ -51,7 +52,6 @@ fun DetailedLogo(
     val logoSize by animateDpAsState(targetValue = lerp(120.dp, 40.dp, collapseFraction))
     val nameFontSize by animateSpAsState(targetValue = lerp(28.sp, 18.sp, collapseFraction))
     val paradigmFontSize by animateSpAsState(targetValue = lerp(20.sp, 14.sp, collapseFraction))
-    val backButtonSize by animateDpAsState(targetValue = lerp(48.dp, 40.dp, collapseFraction))
     val yearsFontSize by animateSpAsState(targetValue = lerp(16.sp, 12.sp, collapseFraction))
 
     // Отступы для анимации позиций
@@ -75,8 +75,7 @@ fun DetailedLogo(
 
                 onClick = { onBack() },
                 modifier = Modifier
-                    .size(backButtonSize)
-                    .align(Alignment.Top)
+                    .align(Alignment.CenterVertically)
                     .padding(10.dp)
             ) {
                 Icon(

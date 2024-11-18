@@ -2,22 +2,17 @@ package com.riffaells.hellocodehub.presentation.ui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.riffaells.hellocodehub.domain.model.ProgrammingLanguage
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.HighlightedCode
-import com.riffaells.hellocodehub.presentation.ui.detailed.components.styleText
 import org.jetbrains.compose.resources.painterResource
 
 
@@ -47,7 +42,7 @@ fun LangCodeCard(
                         colors = lang.getColors(),
                         start = Offset(0f, Float.POSITIVE_INFINITY),  // Левый нижний угол
                         end = Offset(Float.POSITIVE_INFINITY, 0f)     // Правый верхний угол
-                        ),
+                    ),
                     alpha = 0.1f
                 ),
             verticalAlignment = Alignment.CenterVertically,
@@ -62,7 +57,9 @@ fun LangCodeCard(
             )
             Column {
 
-                HighlightedCode(text = lang.code)
+                HighlightedCode(
+                    text = lang.code,
+                )
 
             }
         }

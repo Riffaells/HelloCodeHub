@@ -24,9 +24,12 @@ import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContent
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContentFeatures
 import com.riffaells.hellocodehub.presentation.ui.detailed.components.TabContentProsCons
 import hellocodehub.composeapp.generated.resources.Res
+import hellocodehub.composeapp.generated.resources.code_copied
 import hellocodehub.composeapp.generated.resources.detailed_tabs
+import hellocodehub.composeapp.generated.resources.no_lang
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringArrayResource
+import org.jetbrains.compose.resources.stringResource
 import kotlin.math.min
 
 
@@ -37,6 +40,9 @@ fun DetailedContent(
 ) {
     val state by component.state.collectAsState()
     val lang = component.lang
+
+    val noLang = stringResource(Res.string.no_lang)
+    val codeCopied = stringResource(Res.string.code_copied)
 
 
     val scrollState = rememberLazyListState()
@@ -157,7 +163,21 @@ fun DetailedContent(
                         ) {
                             item {
                                 when (index) {
-                                    0 -> TabContentDescription(lang)
+                                    0 -> TabContentDescription(lang, onCopy = {
+                                        scope.launch {
+                                            val result = snackbarHostState.showSnackbar(
+                                                codeCopied,
+                                                duration = SnackbarDuration.Short
+                                            )
+                                            when (result) {
+                                                SnackbarResult.ActionPerformed -> {}
+                                                SnackbarResult.Dismissed -> {
+//                                                            snackbarHostState.showSnackbar("Действие отменено")
+                                                }
+                                            }
+                                        }
+                                    })
+
                                     1 ->
                                         TabContentFeatures(
                                             lang = lang,
@@ -167,13 +187,13 @@ fun DetailedContent(
                                                     component.onLangDetailedClicked(it)
                                                 } ?: scope.launch {
                                                     val result = snackbarHostState.showSnackbar(
-                                                        "Такого языка еще нету",
+                                                        noLang,
                                                         duration = SnackbarDuration.Short
                                                     )
                                                     when (result) {
                                                         SnackbarResult.ActionPerformed -> {}
                                                         SnackbarResult.Dismissed -> {
-                                                            snackbarHostState.showSnackbar("Действие отменено")
+//                                                            snackbarHostState.showSnackbar("Действие отменено")
                                                         }
                                                     }
                                                 }
@@ -192,6 +212,7 @@ fun DetailedContent(
             }
         }
 
+
         SnackbarHost(
             modifier = Modifier
                 .align(Alignment.BottomCenter),
@@ -200,7 +221,7 @@ fun DetailedContent(
                 Surface(
                     modifier = Modifier
                         .padding(4.dp),
-                    color = MaterialTheme.colorScheme.surface,
+                    color = MaterialTheme.colorScheme.onBackground,
                     shape = MaterialTheme.shapes.large,
                 ) {
 
@@ -209,6 +230,7 @@ fun DetailedContent(
 
                         ) {
                         Text(
+                            modifier = Modifier.padding(8.dp),
                             text = snackbar.visuals.message
                         )
                     }
@@ -216,5 +238,7 @@ fun DetailedContent(
                 }
             }
         )
+
+
     }
 }

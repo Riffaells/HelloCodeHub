@@ -71,6 +71,16 @@ data class ProgrammingLanguage(
         "typescript" -> Res.drawable.typescript
         "vbnet" -> Res.drawable.vbnet
 
+        "assembly" -> Res.drawable.assembly
+        "lisp" -> Res.drawable.lisp
+        "lua" -> Res.drawable.lua
+        "pascal" -> Res.drawable.pascal
+        "reason" -> Res.drawable.reason
+        "scheme" -> Res.drawable.scheme
+        "sml" -> Res.drawable.sml
+        "webassembly" -> Res.drawable.webassembly
+
+
         else -> Res.drawable.kotlin
     }
 
@@ -106,9 +116,20 @@ data class ProgrammingLanguage(
         "delphi" -> listOf("#9E1C16", "#D0221B", "#F15646", "#F18C81").toColors()
         "erlang" -> listOf("#A3143B", "#B42854", "#BC3C63", "#C7607F").toColors()
         "flow" -> listOf("#FC8B24", "#FC992D", "#FCB436", "#FCC43C", "#FCD05E", "#FCDC5F").toColors()
-        "haskell" -> listOf("#915087","#473C60", "#5F5182").toColors()
-        "ocaml" -> listOf("#F45F1C","#F47F25",  "#FA9449", "#FCA454").toColors()
-        "tcl" -> listOf("#095CAC", "#249CEC", "#FB4B33", "#F42C14","#FCEB3E").toColors()
+        "haskell" -> listOf("#915087", "#473C60", "#5F5182").toColors()
+        "ocaml" -> listOf("#F45F1C", "#F47F25", "#FA9449", "#FCA454").toColors()
+        "tcl" -> listOf("#095CAC", "#249CEC", "#FB4B33", "#F42C14", "#FCEB3E").toColors()
+
+
+        "assembly" -> listOf("#3358A2", "#567CB4", "#7B93C4", "#8CACD4", "#C4CDE3").toColors()
+        "lisp" -> listOf("#CA1F11", "#CB2011", "#CB1F12").toColors()
+        "lua" -> listOf("#8C8CC4", "#5354A2", "#3C3C93", "#2C2E8C", "#04047B").toColors()
+        "pascal" -> listOf("#060B7B", "#6062B4", "#5E5F7D").toColors()
+        "reason" -> listOf("#DC3320", "#DC3C24", "#E4533B", "#EC7464", "#F7C4BE").toColors()
+        "scheme" -> listOf("#1E4EDB", "#4685E2", "#7480E3", "#8CACEB", "#CED2F3").toColors()
+        "sml" -> listOf("#9B7B7B", "#7B626F", "#C3C4C8").toColors()
+        "webassembly" -> listOf("#6050E8", "#6854EC", "#6854EC").toColors()
+
 
         else -> listOf(Color.Red, Color.Blue)
     }

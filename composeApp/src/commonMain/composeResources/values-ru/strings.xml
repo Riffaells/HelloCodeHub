@@ -14,6 +14,9 @@
     <string name="first_release">Первый выпуск</string>
     <string name="hello_world">Привет, мир</string>
 
+    <string name="code_copied">Код скопирован</string>
+    <string name="no_lang">Такого языка пока нет</string>
+
     <string-array name="paradigms">
         <item>Ассемблерный</item>
         <item>Блочно-структурированный</item>

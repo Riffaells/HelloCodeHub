@@ -13,7 +13,11 @@
     <string name="name_origin">Name Origin</string>
     <string name="development_start">Development Start</string>
     <string name="first_release">First Release</string>
-    <string name="hello_world">Приветствие в мире</string>
+    <string name="hello_world">Welcome to the world</string>
+
+
+    <string name="code_copied">Code copied</string>
+    <string name="no_lang">There is no such language yet</string>
 
     <string-array name="paradigms">
         <item>Assembly</item>>

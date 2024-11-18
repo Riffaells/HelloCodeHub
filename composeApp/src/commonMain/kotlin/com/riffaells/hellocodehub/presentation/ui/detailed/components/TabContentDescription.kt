@@ -2,18 +2,16 @@ package com.riffaells.hellocodehub.presentation.ui.detailed.components
 
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.appendInlineContent
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -27,10 +25,15 @@ import hellocodehub.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.resources.FontResource
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.resources.vectorResource
 
 @Composable
-fun TabContentDescription(lang: ProgrammingLanguage) {
+fun TabContentDescription(
+    lang: ProgrammingLanguage,
+    onCopy: () -> Unit,
+) {
+
+    val clipboardManager = LocalClipboardManager.current
+
     Text(
         modifier = Modifier.padding(4.dp),
         text = styleText(lang.description),
@@ -73,7 +76,14 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
 
         ) {
 
-        HighlightedCode(text = lang.code)
+        HighlightedCode(
+            text = lang.code,
+            onCopy = {
+                clipboardManager.setText(it)
+                onCopy()
+            }
+
+        )
     }
 
 
@@ -84,6 +94,7 @@ fun TabContentDescription(lang: ProgrammingLanguage) {
 fun HighlightedCode(
     modifier: Modifier = Modifier,
     text: String,
+    onCopy: ((AnnotatedString) -> Unit)? = null,
     codeColor: CodeColor = CodeColor(),
     font: FontResource = Res.font.JetBrainsMono,
     fontItalic: FontResource = Res.font.JetBrainsMono_Italic
@@ -168,18 +179,10 @@ fun HighlightedCode(
         )
     ) {
         Box {
-            IconButton(
-                modifier = Modifier.padding(4.dp).align(Alignment.TopEnd).alpha(0.7f),
-                onClick = {}
-            ) {
-                Icon(
-                    imageVector = RIcons.Copy,
-                    contentDescription = null
-                )
-            }
+
             SelectionContainer(
                 modifier = Modifier
-                    .padding(16.dp, 20.dp)
+                    .padding(16.dp, 32.dp)
                     .horizontalScroll(rememberScrollState()),
             ) {
                 Text(
@@ -190,6 +193,20 @@ fun HighlightedCode(
                     fontFamily = FontFamily(Font(font))
 
                 )
+            }
+
+            onCopy?.let {
+                IconButton(
+                    modifier = Modifier.padding(4.dp).align(Alignment.TopEnd).alpha(0.4f),
+                    onClick = {
+                        it.invoke(annotatedString)
+                    }
+                ) {
+                    Icon(
+                        imageVector = RIcons.Copy,
+                        contentDescription = null
+                    )
+                }
             }
         }
     }
