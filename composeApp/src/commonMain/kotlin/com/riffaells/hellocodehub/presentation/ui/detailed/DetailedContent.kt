@@ -31,12 +31,15 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringArrayResource
 import org.jetbrains.compose.resources.stringResource
 import kotlin.math.min
+import androidx.compose.animation.*
+import androidx.compose.animation.core.*
 
 
 @Composable
 fun DetailedContent(
     stateRoot: RootStore.State,
     component: DetailedComponent,
+    modifier: Modifier = Modifier,
 ) {
     val state by component.state.collectAsState()
     val lang = component.lang
@@ -71,8 +74,7 @@ fun DetailedContent(
     }
 
     Box(
-        modifier = Modifier
-            .fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
 
 
@@ -87,7 +89,11 @@ fun DetailedContent(
                         ),
                     alpha = 0.2f
                 )
-                .padding(top = 36.dp),
+                .padding(top = 36.dp)
+                .animateContentSize()
+                .graphicsLayer {
+                    alpha = 1f
+                },
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             DetailedLogo(

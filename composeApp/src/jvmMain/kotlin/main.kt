@@ -24,6 +24,8 @@ fun main() {
     SwingUtilities.invokeAndWait {
         setMainThreadId(Thread.currentThread().id)
 
+
+
     }
     application {
         withDI(
@@ -34,6 +36,7 @@ fun main() {
             val root = DefaultRootComponent(DefaultComponentContext(lifecycle), di = di)
             val windowState = rememberWindowState()
             LifecycleController(lifecycle, windowState)
+
 
 
 

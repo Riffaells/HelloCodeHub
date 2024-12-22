@@ -30,8 +30,9 @@ fun MainContent(
 
     Column(
         modifier = modifier
+            .fillMaxSize()
             .padding(top = 36.dp, start = 8.dp, end = 8.dp)
-            .fillMaxSize(),
+//            .fillMaxSize(),
     ) {
 
 
@@ -82,4 +83,3 @@ fun MainContent(
 
 
 }
-
