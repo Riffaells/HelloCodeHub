@@ -4,8 +4,6 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
@@ -16,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import com.riffaells.hellocodehub.domain.components.main.MainComponent
 import com.riffaells.hellocodehub.domain.components.root.RootStore
 import com.riffaells.hellocodehub.presentation.ui.component.LangCard
-import com.riffaells.hellocodehub.presentation.ui.component.LangCodeCard
 
 @Composable
 fun MainContent(
@@ -30,9 +27,7 @@ fun MainContent(
 
     Column(
         modifier = modifier
-            .fillMaxSize()
             .padding(top = 36.dp, start = 8.dp, end = 8.dp)
-//            .fillMaxSize(),
     ) {
 
 
