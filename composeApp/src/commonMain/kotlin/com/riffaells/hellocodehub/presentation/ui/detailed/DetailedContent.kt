@@ -33,6 +33,7 @@ import org.jetbrains.compose.resources.stringResource
 import kotlin.math.min
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
+import androidx.compose.ui.graphics.graphicsLayer
 
 
 @Composable

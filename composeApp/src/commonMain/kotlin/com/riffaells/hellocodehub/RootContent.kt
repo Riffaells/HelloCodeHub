@@ -29,61 +29,65 @@ fun RootContent(
     val stateRoot by component.state.collectAsState()
     val dialogSlot by component.detailedSlot.subscribeAsState()
 
-    Surface(
-        modifier = modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
+    BoxWithConstraints(
+        modifier = modifier.fillMaxSize()
     ) {
-        Row(
-            modifier = Modifier.fillMaxSize()
+        val isWideScreen = maxWidth > 800.dp
+
+        println("Screen width: $maxWidth, isWideScreen: $isWideScreen") // Отладочный вывод
+
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
         ) {
-            Box(
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxHeight()
-            ) {
-                MainContent(
-                    stateRoot = stateRoot,
-                    component = component.mainComponent,
-                    modifier = Modifier.fillMaxSize()
-                )
-            }
-
-            AnimatedVisibility(
-                visible = dialogSlot.child != null,
-                enter = slideInHorizontally(
-                    initialOffsetX = { it / 2 },
-                    animationSpec = tween(300, easing = EaseOutCubic)
-                ) + fadeIn(
-                    animationSpec = tween(300)
-                ),
-                exit = slideOutHorizontally(
-                    targetOffsetX = { it / 2 },
-                    animationSpec = tween(300, easing = EaseInCubic)
-                ) + fadeOut(
-                    animationSpec = tween(300)
-                )
-            ) {
-                Row(
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxHeight()
-                ) {
-                    HorizontalDivider(
-                        modifier = Modifier
-                            .fillMaxHeight()
-                            .width(1.dp)
-                            .animateEnterExit(
-                                enter = fadeIn() + expandHorizontally(),
-                                exit = fadeOut() + shrinkHorizontally()
-                            ),
-                        color = MaterialTheme.colorScheme.outlineVariant
-                    )
-
+            if (isWideScreen) {
+                // Широкий экран - два компонента рядом
+                Row(modifier = Modifier.fillMaxSize()) {
+                    // MainContent всегда виден
                     Box(
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxHeight()
                     ) {
+                        MainContent(
+                            stateRoot = stateRoot,
+                            component = component.mainComponent,
+                            modifier = Modifier.fillMaxSize()
+                        )
+                    }
+
+                    // DetailedContent с анимацией
+                    dialogSlot.child?.instance?.let { detailed ->
+                        HorizontalDivider(
+                            modifier = Modifier
+                                .fillMaxHeight()
+                                .width(1.dp),
+                            color = MaterialTheme.colorScheme.outlineVariant
+                        )
+
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .fillMaxHeight()
+                        ) {
+                            DetailedContent(
+                                stateRoot = stateRoot,
+                                component = detailed,
+                                modifier = Modifier.fillMaxSize()
+                            )
+                        }
+                    }
+                }
+            } else {
+                // Узкий экран - один компонент
+                Box(modifier = Modifier.fillMaxSize()) {
+                    if (dialogSlot.child == null) {
+                        MainContent(
+                            stateRoot = stateRoot,
+                            component = component.mainComponent,
+                            modifier = Modifier.fillMaxSize()
+                        )
+                    } else {
                         dialogSlot.child?.instance?.let { detailed ->
                             DetailedContent(
                                 stateRoot = stateRoot,
