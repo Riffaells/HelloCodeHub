@@ -24,8 +24,6 @@ fun main() {
     SwingUtilities.invokeAndWait {
         setMainThreadId(Thread.currentThread().id)
 
-
-
     }
     application {
         withDI(

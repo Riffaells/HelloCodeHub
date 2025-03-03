@@ -18,12 +18,14 @@ interface RootStore : Store<Intent, RootStore.State, Nothing> {
     sealed interface Intent {
 
         data class UpdateLang(val languages: List<ProgrammingLanguage>) : Intent
+        data class CurrentLang(val language: ProgrammingLanguage?) : Intent
 
     }
 
     @Serializable
     data class State(
         val languages: List<ProgrammingLanguage> = emptyList(),
+        val currentLanguage: ProgrammingLanguage? = null,
     )
 }
 
@@ -48,6 +50,7 @@ internal class RootStoreFactory(
     private sealed interface Msg {
 
         data class UpdateLang(val languages: List<ProgrammingLanguage>) : Msg
+        data class CurrentLang(val language: ProgrammingLanguage?) : Msg
 
 
     }
@@ -65,7 +68,7 @@ internal class RootStoreFactory(
         override fun executeIntent(intent: Intent): Unit =
             when (intent) {
                 is Intent.UpdateLang -> lang(intent.languages)
-                else -> {}
+                is Intent.CurrentLang -> dispatch(Msg.CurrentLang(intent.language))
             }
 
         private fun lang(languages: List<ProgrammingLanguage>) {
@@ -80,6 +83,7 @@ internal class RootStoreFactory(
         override fun RootStore.State.reduce(msg: Msg): RootStore.State =
             when (msg) {
                 is Msg.UpdateLang -> copy(languages = msg.languages)
+                is Msg.CurrentLang -> copy(currentLanguage = msg.language)
             }
     }
 }

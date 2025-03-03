@@ -36,7 +36,6 @@ sealed interface Config {
     data class Detailed(val language: ProgrammingLanguage) : Config
 }
 
-@OptIn(ExperimentalDecomposeApi::class)
 class DefaultRootComponent(
     componentContext: ComponentContext,
     storeFactory: DefaultStoreFactory = DefaultStoreFactory(),
@@ -87,7 +86,6 @@ class DefaultRootComponent(
     }
 
     override fun showDetailed(language: ProgrammingLanguage) {
-        println("Activating detailed for: ${language.name}")
         detailedNavigation.activate(Config.Detailed(language))
     }
 

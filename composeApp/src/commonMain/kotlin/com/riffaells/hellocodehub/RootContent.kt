@@ -16,6 +16,7 @@ import com.arkivanov.decompose.extensions.compose.subscribeAsState
 import com.riffaells.hellocodehub.domain.components.root.RootComponent
 import com.riffaells.hellocodehub.presentation.ui.detailed.DetailedContent
 import com.riffaells.hellocodehub.presentation.ui.main.MainContent
+import androidx.compose.animation.core.EaseInOutCubic
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -35,152 +36,115 @@ fun RootContent(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            if (isWideScreen) {
-                Row(modifier = Modifier.fillMaxSize()) {
-                    // Первая часть с MainContent
-                    AnimatedContent(
-                        targetState = dialogSlot.child != null,
-                        modifier = Modifier
-                            .weight(0.5f),
+            AnimatedContent(
+                targetState = Pair(isWideScreen, dialogSlot.child?.instance),
+                transitionSpec = {
+                    fadeIn(
+                        animationSpec = tween(300, easing = EaseInOutCubic)
+                    ).togetherWith(
+                        fadeOut(
+                            animationSpec = tween(300, easing = EaseInOutCubic)
+                        )
+                    ).using(
+                        SizeTransform(clip = false) { _, _ ->
+                            spring(
+                                dampingRatio = Spring.DampingRatioMediumBouncy,
+                                stiffness = Spring.StiffnessLow
+                            )
+                        }
+                    )
+                }
+            ) { (isWide, detailed) ->
+                if (isWide) {
+                    Row(
+                        modifier = Modifier.fillMaxSize()
                     ) {
-                        Box(
+                        MainContent(
+                            stateRoot = stateRoot,
+                            component = component.mainComponent,
+                            componentRoot = component,
                             modifier = Modifier
                                 .weight(0.5f)
-                                .fillMaxHeight()
+                                .fillMaxSize()
+                        )
 
+                        AnimatedVisibility(
+                            visible = detailed != null,
+                            modifier = Modifier.weight(0.5f),
+                            enter = fadeIn(tween(300)) +
+                                slideInHorizontally(
+                                    animationSpec = tween(300, easing = EaseInOutCubic),
+                                    initialOffsetX = { it }
+                                ),
+                            exit = fadeOut(tween(300)) +
+                                slideOutHorizontally(
+                                    animationSpec = tween(300, easing = EaseInOutCubic),
+                                    targetOffsetX = { it }
+                                )
+                        ) {
+                            Row {
+                                HorizontalDivider(
+                                    modifier = Modifier
+                                        .fillMaxHeight()
+                                        .width(1.dp),
+                                    color = MaterialTheme.colorScheme.outlineVariant
+                                )
+
+                                detailed?.let {
+                                    DetailedContent(
+                                        stateRoot = stateRoot,
+                                        component = it,
+                                        componentRoot = component,
+                                        modifier = Modifier.fillMaxSize()
+                                    )
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    Box(modifier = Modifier.fillMaxSize()) {
+                        AnimatedVisibility(
+                            visible = detailed == null,
+                            enter = fadeIn(tween(300)) +
+                                slideInHorizontally(
+                                    animationSpec = tween(300, easing = EaseInOutCubic),
+                                    initialOffsetX = { -it }
+                                ),
+                            exit = fadeOut(tween(300)) +
+                                slideOutHorizontally(
+                                    animationSpec = tween(300, easing = EaseInOutCubic),
+                                    targetOffsetX = { -it }
+                                )
                         ) {
                             MainContent(
                                 stateRoot = stateRoot,
                                 component = component.mainComponent,
-                                modifier = Modifier
-                                    .animateContentSize(
-                                        animationSpec = spring(
-                                            dampingRatio = Spring.DampingRatioNoBouncy,
-                                            stiffness = Spring.StiffnessMedium
-                                        )
-                                    )
-                                    .fillMaxSize()
+                                componentRoot = component,
+                                modifier = Modifier.fillMaxSize()
                             )
                         }
-                    }
 
-                    // Детальный контент (DetailedContent) с анимацией
-                    AnimatedVisibility(
-                        visible = dialogSlot.child != null,
-                        modifier = Modifier.weight(0.5f),
-                        enter = slideInHorizontally(
-                            initialOffsetX = { it / 2 },
-                            animationSpec = tween(
-                                durationMillis = 400,
-                                easing = FastOutSlowInEasing
-                            )
-                        ) + fadeIn(
-                            animationSpec = tween(
-                                durationMillis = 400,
-                                easing = LinearEasing
-                            )
-                        ),
-                        exit = slideOutHorizontally(
-                            targetOffsetX = { it / 4 },
-                            animationSpec = tween(
-                                durationMillis = 400,
-                                easing = FastOutSlowInEasing
-                            )
-                        ) + fadeOut(
-                            animationSpec = tween(
-                                durationMillis = 300,
-                                easing = LinearEasing
-                            )
-                        )
-                    ) {
-                        Row {
-                            // Разделитель с анимацией
-                            HorizontalDivider(
-                                modifier = Modifier
-                                    .fillMaxHeight()
-                                    .width(1.dp)
-                                    .animateEnterExit(
-                                        enter = expandHorizontally(
-                                            animationSpec = tween(
-                                                durationMillis = 300,
-                                                easing = LinearOutSlowInEasing
-                                            )
-                                        ) + fadeIn(
-                                            animationSpec = tween(300)
-                                        ),
-                                        exit = shrinkHorizontally(
-                                            animationSpec = tween(
-                                                durationMillis = 300,
-                                                easing = FastOutLinearInEasing
-                                            )
-                                        ) + fadeOut(
-                                            animationSpec = tween(200)
-                                        )
-                                    ),
-                                color = MaterialTheme.colorScheme.outlineVariant
-                            )
-
-                            dialogSlot.child?.instance?.let { detailed ->
+                        AnimatedVisibility(
+                            visible = detailed != null,
+                            enter = fadeIn(tween(300)) +
+                                slideInHorizontally(
+                                    animationSpec = tween(300, easing = EaseInOutCubic),
+                                    initialOffsetX = { it }
+                                ),
+                            exit = fadeOut(tween(300)) +
+                                slideOutHorizontally(
+                                    animationSpec = tween(300, easing = EaseInOutCubic),
+                                    targetOffsetX = { it }
+                                )
+                        ) {
+                            detailed?.let {
                                 DetailedContent(
                                     stateRoot = stateRoot,
-                                    component = detailed,
+                                    component = it,
+                                    componentRoot = component,
                                     modifier = Modifier.fillMaxSize()
                                 )
                             }
-                        }
-                    }
-                }
-            } else {
-                // Мобильная версия (без изменений)
-                AnimatedContent(
-                    targetState = dialogSlot.child != null,
-                    transitionSpec = {
-                        if (targetState) {
-                            (slideInHorizontally(
-                                initialOffsetX = { it },
-                                animationSpec = tween(400, easing = FastOutSlowInEasing)
-                            ) + fadeIn(
-                                animationSpec = tween(350)
-                            )).togetherWith(
-                                slideOutHorizontally(
-                                    targetOffsetX = { -it },
-                                    animationSpec = tween(400, easing = FastOutSlowInEasing)
-                                ) + fadeOut(
-                                    animationSpec = tween(350)
-                                )
-                            )
-                        } else {
-                            (slideInHorizontally(
-                                initialOffsetX = { -it },
-                                animationSpec = tween(400, easing = FastOutSlowInEasing)
-                            ) + fadeIn(
-                                animationSpec = tween(350)
-                            )).togetherWith(
-                                slideOutHorizontally(
-                                    targetOffsetX = { it },
-                                    animationSpec = tween(400, easing = FastOutSlowInEasing)
-                                ) + fadeOut(
-                                    animationSpec = tween(350)
-                                )
-                            )
-                        }.using(
-                            SizeTransform(clip = false)
-                        )
-                    }
-                ) { isDetailed ->
-                    if (!isDetailed) {
-                        MainContent(
-                            stateRoot = stateRoot,
-                            component = component.mainComponent,
-                            modifier = Modifier.fillMaxSize()
-                        )
-                    } else {
-                        dialogSlot.child?.instance?.let { detailed ->
-                            DetailedContent(
-                                stateRoot = stateRoot,
-                                component = detailed,
-                                modifier = Modifier.fillMaxSize()
-                            )
                         }
                     }
                 }

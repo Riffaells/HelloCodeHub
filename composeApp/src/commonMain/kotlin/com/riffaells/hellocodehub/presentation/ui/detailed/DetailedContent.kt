@@ -34,11 +34,13 @@ import kotlin.math.min
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.ui.graphics.graphicsLayer
+import com.riffaells.hellocodehub.domain.components.root.RootComponent
 
 
 @Composable
 fun DetailedContent(
     stateRoot: RootStore.State,
+    componentRoot: RootComponent,
     component: DetailedComponent,
     modifier: Modifier = Modifier,
 ) {
@@ -100,6 +102,7 @@ fun DetailedContent(
             DetailedLogo(
                 lang = lang,
                 onBack = {
+                    componentRoot.onEvent(RootStore.Intent.CurrentLang(null))
                     component.onBackClicked()
                 },
                 collapseFraction = collapseFraction,
